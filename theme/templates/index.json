@@ -1,0 +1,35 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "subheading": "SculptFit Collection!",
+        "heading": "Die Nr. 1 für dein Wohlgefühl",
+        "text": "Glattere Haut, bessere Durchblutung & mehr Leichtigkeit im Alltag – für ein starkes Körpergefühl in jedem Alter.",
+        "btn1_label": "Jetzt entdecken",
+        "btn1_link": "/collections/all",
+        "btn2_label": "Mehr erfahren",
+        "btn2_link": "/pages/ueber-uns"
+      }
+    },
+    "leggings": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "SculptFit Collection!",
+        "collection": "leggings",
+        "products_limit": 8,
+        "show_view_all": true
+      }
+    },
+    "shorts": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Summer Collection! ☀️",
+        "collection": "shorts",
+        "products_limit": 8,
+        "show_view_all": true
+      }
+    }
+  },
+  "order": ["hero", "leggings", "shorts"]
+}

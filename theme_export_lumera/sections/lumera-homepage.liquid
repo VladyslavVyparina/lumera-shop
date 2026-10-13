@@ -1,0 +1,355 @@
+{{ 'lumera-home.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'lumera-home.js' | asset_url }}" defer></script>
+
+{% liquid
+  assign product = all_products[section.settings.product_handle]
+  assign collection = collections[section.settings.collection]
+%}
+
+<div class="lumera-home" id="lumera-home">
+  <!-- HERO -->
+  <section class="lum-hero">
+    <div class="lum-hero-bg">
+      {% if section.settings.hero_image != blank %}
+        <img
+          src="{{ section.settings.hero_image | image_url: width: 1920 }}"
+          alt="LUMÉRA"
+          width="1920"
+          height="1080"
+          loading="eager"
+        >
+      {% else %}
+        <img
+          src="{{ 'lumera-hero.jpg' | asset_url }}"
+          alt="LUMÉRA"
+          width="1920"
+          height="1080"
+          loading="eager"
+        >
+      {% endif %}
+    </div>
+    <div class="lum-hero-ov"></div>
+    <div class="lum-hero-c lum-container">
+      <div class="lum-hero-tag">{{ section.settings.hero_tag }}</div>
+      <h1>{{ section.settings.hero_heading }}</h1>
+      <p>{{ section.settings.hero_text }}</p>
+      <div class="lum-hbtns">
+        <a href="#lumera-leggings" class="lum-btn lum-btn-gold lum-btn-lg">{{ section.settings.hero_btn1 }}</a>
+        <a href="#lumera-about" class="lum-btn lum-btn-ghost lum-btn-lg">{{ section.settings.hero_btn2 }}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES BAR -->
+  <div class="lum-fbar">
+    <div class="lum-container">
+      <div class="lum-fbar-in">
+        <div class="lum-fi">
+          <div class="lum-fi-ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div><strong>Kostenloser Versand</strong><span>Für alle Bestellungen</span></div>
+        </div>
+        <div class="lum-fi">
+          <div class="lum-fi-ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          </div>
+          <div><strong>100 Tage Rückgabe</strong><span>Risikolos bestellen</span></div>
+        </div>
+        <div class="lum-fi">
+          <div class="lum-fi-ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div><strong>Kostenloser Umtausch</strong><span>Falsche Größe? Kein Problem</span></div>
+        </div>
+        <div class="lum-fi">
+          <div class="lum-fi-ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <div><strong>Klarna verfügbar</strong><span>Jetzt kaufen, später zahlen</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="lum-sec" id="lumera-leggings">
+    <div class="lum-container">
+      <div class="lum-sh">
+        <h2>{{ section.settings.products_title }}</h2>
+        {% if collection != blank %}
+          <a href="{{ collection.url }}">{{ section.settings.products_link }}</a>
+        {% endif %}
+      </div>
+      <div class="lum-pgrid">
+        {% if product != blank %}
+          {% assign color_option_index = nil %}
+          {% for option in product.options_with_values %}
+            {% assign opt_name = option.name | downcase %}
+            {% if opt_name == 'farbe' or opt_name == 'color' %}
+              {% assign color_option_index = forloop.index0 %}
+            {% endif %}
+          {% endfor %}
+
+          {% assign sku_assets = 'lumera-sku-01.jpg,lumera-sku-02.jpg,lumera-sku-03.jpg,lumera-sku-04.jpg,lumera-sku-05.jpg,lumera-sku-06.jpg,lumera-sku-07.jpg,lumera-sku-08.jpg,lumera-sku-09.jpg,lumera-sku-10.jpg,lumera-sku-11.jpg,lumera-sku-12.jpg,lumera-sku-13.jpg,lumera-sku-14.jpg' | split: ',' %}
+
+          {% for option in product.options_with_values %}
+            {% assign opt_name = option.name | downcase %}
+            {% if opt_name == 'farbe' or opt_name == 'color' %}
+              {% for value in option.values %}
+                {% assign color_variant = nil %}
+                {% for variant in product.variants %}
+                  {% if color_option_index == 0 and variant.option1 == value %}
+                    {% assign color_variant = variant %}
+                    {% break %}
+                  {% elsif color_option_index == 1 and variant.option2 == value %}
+                    {% assign color_variant = variant %}
+                    {% break %}
+                  {% elsif color_option_index == 2 and variant.option3 == value %}
+                    {% assign color_variant = variant %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+
+                {% assign img_asset = sku_assets[forloop.index0] %}
+                {% assign card_img = img_asset | asset_url %}
+                {% if color_variant.featured_image %}
+                  {% assign card_img = color_variant.featured_image | image_url: width: 600 %}
+                {% elsif product.featured_image %}
+                  {% assign card_img = product.featured_image | image_url: width: 600 %}
+                {% endif %}
+
+                {% assign card_url = product.url %}
+                {% if color_variant %}
+                  {% assign card_url = product.url | append: '?variant=' | append: color_variant.id %}
+                {% endif %}
+
+                <a class="lum-pcard" href="{{ card_url }}">
+                  <div class="lum-pcimg">
+                    <span class="lum-pbadge">Sale</span>
+                    <img src="{{ card_img }}" alt="{{ product.title }} – {{ value }}" loading="lazy" width="400" height="533">
+                  </div>
+                  <div class="lum-pbody">
+                    <div class="lum-ptitle">{{ product.title }} – {{ value }}</div>
+                    <div class="lum-pprices">
+                      {% if product.compare_at_price > product.price %}
+                        <span class="lum-p-old">{{ product.compare_at_price | money }}</span>
+                      {% endif %}
+                      <span class="lum-p-now">{{ product.price | money }}</span>
+                    </div>
+                    <div class="lum-pdel">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                      5–10 Werktage
+                    </div>
+                    <span class="lum-pc-btn">Ansehen</span>
+                  </div>
+                </a>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        {% elsif collection != blank %}
+          {% for item in collection.products limit: section.settings.max_products %}
+            <a class="lum-pcard" href="{{ item.url }}">
+              <div class="lum-pcimg">
+                {% if item.compare_at_price > item.price %}<span class="lum-pbadge">Sale</span>{% endif %}
+                {% if item.featured_image %}
+                  <img src="{{ item.featured_image | image_url: width: 600 }}" alt="{{ item.title }}" loading="lazy" width="400" height="533">
+                {% endif %}
+              </div>
+              <div class="lum-pbody">
+                <div class="lum-ptitle">{{ item.title }}</div>
+                <div class="lum-pprices">
+                  {% if item.compare_at_price > item.price %}
+                    <span class="lum-p-old">{{ item.compare_at_price | money }}</span>
+                  {% endif %}
+                  <span class="lum-p-now">{{ item.price | money }}</span>
+                </div>
+                <span class="lum-pc-btn">Ansehen</span>
+              </div>
+            </a>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="lum-stats">
+    <div class="lum-container">
+      <div class="lum-stats-in">
+        <div>
+          <span class="lum-sn">87%</span>
+          <div class="lum-sl">sehen nach 2 Monaten weniger Cellulite</div>
+          <div class="lum-ss">*Kundenbefragung 2026</div>
+        </div>
+        <div>
+          <span class="lum-sn">93%</span>
+          <div class="lum-sl">spüren leichtere Beine nach 2 Wochen</div>
+          <div class="lum-ss">*Kundenbefragung 2026</div>
+        </div>
+        <div>
+          <span class="lum-sn">12.000+</span>
+          <div class="lum-sl">zufriedene Kundinnen in Deutschland</div>
+          <div class="lum-ss">★★★★★ 4.8 / 5</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="lum-sec lum-about" id="lumera-about">
+    <div class="lum-container lum-about-inner">
+      <h2>Form &amp; Gesundheit in einem</h2>
+      <p>Die Luméra Kompressionsleggings vereint medizinisch inspirierte Kompression, eingebaute Widerstandszonen und unsere exklusive 3D-Technologie. Betont die Silhouette natürlich, fördert die Durchblutung und reduziert das Erscheinungsbild von Cellulite.</p>
+      <div class="lum-feats-icons">
+        <div class="lum-feat-ico-item">
+          <img src="{{ 'lumera-icon-cellulite.png' | asset_url }}" alt="Cellulite" width="90" height="90" loading="lazy">
+          <strong>Reduziert Cellulite</strong><span>sichtbar &amp; nachhaltig</span>
+        </div>
+        <div class="lum-feat-ico-item">
+          <img src="{{ 'lumera-icon-wasser.png' | asset_url }}" alt="Wasser" width="90" height="90" loading="lazy">
+          <strong>Gegen Wassereinlagerungen</strong><span>wirkt aktiv</span>
+        </div>
+        <div class="lum-feat-ico-item">
+          <img src="{{ 'lumera-icon-silhouette.png' | asset_url }}" alt="Silhouette" width="90" height="90" loading="lazy">
+          <strong>Betont Silhouette</strong><span>natürlich &amp; formend</span>
+        </div>
+        <div class="lum-feat-ico-item">
+          <img src="{{ 'lumera-icon-energie.png' | asset_url }}" alt="Energie" width="90" height="90" loading="lazy">
+          <strong>Aktiviert Beine</strong><span>müde Beine ade</span>
+        </div>
+        <div class="lum-feat-ico-item">
+          <img src="{{ 'lumera-icon-kalorien.png' | asset_url }}" alt="Kalorien" width="90" height="90" loading="lazy">
+          <strong>3× mehr Kalorien</strong><span>verbrenne mehr</span>
+        </div>
+        <div class="lum-feat-ico-item">
+          <img src="{{ 'lumera-icon-kompression.png' | asset_url }}" alt="Kompression" width="90" height="90" loading="lazy">
+          <strong>Aktive Kompression</strong><span>&amp; Support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="lum-sec" id="lumera-faq">
+    <div class="lum-container lum-faq-inner">
+      <div class="lum-sh"><h2>Häufig gestellte Fragen</h2></div>
+      <div class="lum-acc">
+        <div class="lum-aci">
+          <button type="button" class="lum-acb">Wie lange dauert die Lieferung?</button>
+          <div class="lum-acbd"><p>Die Lieferzeit beträgt <strong>5–10 Werktage</strong> nach Zahlungseingang. Du erhältst eine Versandbestätigung mit Tracking-Nummer.</p></div>
+        </div>
+        <div class="lum-aci">
+          <button type="button" class="lum-acb">Ist der Versand kostenlos?</button>
+          <div class="lum-acbd"><p>Ja! Der Versand ist für dich komplett kostenlos.</p></div>
+        </div>
+        <div class="lum-aci">
+          <button type="button" class="lum-acb">Wie lange gilt das Rückgaberecht?</button>
+          <div class="lum-acbd"><p>Du hast <strong>100 Tage</strong> Zeit zurückzusenden. Die Rücksendung ist kostenlos. Rückerstattung innerhalb von 14 Tagen.</p></div>
+        </div>
+        <div class="lum-aci">
+          <button type="button" class="lum-acb">Welche Zahlungsmethoden akzeptiert ihr?</button>
+          <div class="lum-acbd"><p>PayPal, Shop Pay und Visa.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="lum-sec lum-nl" id="lumera-kontakt">
+    <div class="lum-container lum-nl-inner">
+      <h2>Exklusive Angebote</h2>
+      <p class="lum-nl-sub">Abonniere den Newsletter und erhalte <strong>10% Rabatt</strong> auf deine erste Bestellung.</p>
+      {% form 'customer', class: 'lum-nl-form-wrap' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="lum-nl-form">
+          <input class="lum-nl-inp" type="email" name="contact[email]" placeholder="deine@email.de" required autocomplete="email">
+          <button class="lum-nl-sbtn" type="submit">Anmelden</button>
+        </div>
+      {% endform %}
+      <p class="lum-nl-legal">Mit der Anmeldung stimmst du unserer <a href="/policies/privacy-policy">Datenschutzerklärung</a> zu.</p>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Luméra Homepage",
+  "tag": "section",
+  "class": "lumera-homepage-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_handle",
+      "label": "Product handle",
+      "default": "lumera-3d-kompressionsleggings"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "Max products (fallback)",
+      "min": 4,
+      "max": 24,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image (optional)"
+    },
+    {
+      "type": "text",
+      "id": "hero_tag",
+      "label": "Hero tag",
+      "default": "LUMÉRA · 2026 COLLECTION"
+    },
+    {
+      "type": "html",
+      "id": "hero_heading",
+      "label": "Hero heading",
+      "default": "Die Nr. 1 für<br>dein <em>Wohlgefühl</em>"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_text",
+      "label": "Hero text",
+      "default": "Glattere Haut, bessere Durchblutung & mehr Leichtigkeit im Alltag – für ein starkes Körpergefühl in jedem Alter."
+    },
+    {
+      "type": "text",
+      "id": "hero_btn1",
+      "label": "Hero button 1",
+      "default": "Jetzt entdecken"
+    },
+    {
+      "type": "text",
+      "id": "hero_btn2",
+      "label": "Hero button 2",
+      "default": "Mehr erfahren"
+    },
+    {
+      "type": "text",
+      "id": "products_title",
+      "label": "Products title",
+      "default": "LUMÉRA Collection"
+    },
+    {
+      "type": "text",
+      "id": "products_link",
+      "label": "Products link label",
+      "default": "Alle anzeigen →"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luméra Homepage"
+    }
+  ]
+}
+{% endschema %}

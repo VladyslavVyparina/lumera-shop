@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+
+  <title>
+    {{ page_title }}{% if current_tags %} &ndash; {{ 'general.meta.tags' | t: tags: current_tags | join: ', ' }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  {% if settings.favicon != blank %}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
+  {% endif %}
+
+  {{ content_for_header }}
+
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+  {{ 'font-awesome.min.css' | asset_url | stylesheet_tag }}
+</head>
+
+<body class="{% if customer %}customer-logged-in{% endif %} template-{{ template.name }}">
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="cookie-banner" style="display:none;">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__text">
+        <strong>Wir verwenden Cookies</strong>
+        <p>Wir setzen Cookies ein, um Ihnen die bestmögliche Nutzererfahrung zu bieten, Inhalte zu personalisieren und unseren Datenverkehr zu analysieren. Durch Klicken auf „Alle akzeptieren" stimmen Sie der Verwendung aller Cookies zu. Durch Klicken auf „Ablehnen" werden nur technisch notwendige Cookies gesetzt. Weitere Informationen finden Sie in unserer <a href="/pages/datenschutz">Datenschutzerklärung</a>.</p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button id="cookie-accept" class="btn btn--primary">Alle akzeptieren</button>
+        <button id="cookie-decline" class="btn btn--secondary">Ablehnen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer Overlay -->
+  <div id="cart-overlay" class="cart-overlay"></div>
+
+  <!-- Cart Drawer -->
+  <div id="cart-drawer" class="cart-drawer">
+    <div class="cart-drawer__header">
+      <h2>Warenkorb</h2>
+      <button class="cart-drawer__close" id="cart-close" aria-label="Warenkorb schließen">&times;</button>
+    </div>
+    <div class="cart-drawer__body" id="cart-drawer-body">
+      <div class="cart-drawer__loading">Laden...</div>
+    </div>
+    <div class="cart-drawer__footer" id="cart-drawer-footer" style="display:none;">
+      <div class="cart-drawer__subtotal">
+        <span>Zwischensumme</span>
+        <span id="cart-subtotal"></span>
+      </div>
+      <p class="cart-drawer__tax-note">inkl. 19% MwSt. zzgl. <a href="/policies/shipping-policy">Versandkosten</a></p>
+      <a href="/cart" class="btn btn--primary btn--full">Zur Kasse</a>
+      <button class="btn btn--secondary btn--full" id="cart-drawer-continue">Weiter einkaufen</button>
+    </div>
+  </div>
+
+  {% section 'announcement-bar' %}
+  {% section 'header' %}
+
+  <main id="main-content" role="main">
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'features-bar' %}
+  {% section 'footer' %}
+
+  {{ 'theme.js' | asset_url | script_tag }}
+
+  <!-- Structured Data für Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ shop.name }}",
+    "url": "{{ shop.url }}",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "availableLanguage": "German"
+    }
+  }
+  </script>
+
+  <!-- Analytics nur nach Cookie-Zustimmung -->
+  <script>
+    (function() {
+      var consent = localStorage.getItem('cookie_consent');
+      if (consent === 'accepted') {
+        // Meta Pixel / Google Analytics hier laden
+        // {% if settings.meta_pixel_id != blank %}
+        // loadMetaPixel('{{ settings.meta_pixel_id }}');
+        // {% endif %}
+      }
+    })();
+  </script>
+
+  {% comment %}
+    KeyCRM Integration: Bestellung nach erfolgreichem Checkout übertragen.
+    Wird auf der Bestellbestätigungsseite ausgeführt.
+    SHOPIFY SETUP: Füge in Admin → Einstellungen → Checkout → "Zusätzliche Skripte"
+    folgenden Code ein: {% render 'keycrm-order' %}
+    ODER nutze den Shopify Webhook: Bestellungen/Erstellt → POST an:
+    https://deine-app.com/keycrm-webhook (Serverless-Proxy empfohlen für CORS)
+  {% endcomment %}
+  {% if template == 'customers/order' or template == 'checkout' %}
+    {% render 'keycrm-order' %}
+  {% endif %}
+
+</body>
+</html>

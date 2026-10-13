@@ -1,0 +1,127 @@
+/* Luméra – cosmetic brand overrides only */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+body {
+  font-family: 'DM Sans', var(--font-body--family), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.header-logo,
+.button,
+.product-card,
+.price {
+  font-family: 'DM Sans', var(--font-heading--family), sans-serif;
+}
+
+/* Logo – no stretch, transparent */
+.header-logo__image-container,
+.header-logo,
+.logo-block {
+  background: transparent !important;
+}
+
+.header-logo__image,
+.logo-block__image,
+.lumera-header-logo {
+  width: auto !important;
+  max-width: 220px;
+  height: auto !important;
+  max-height: 58px;
+  object-fit: contain;
+  background: transparent !important;
+}
+
+@media screen and (max-width: 749px) {
+  .header-logo__image,
+  .logo-block__image,
+  .lumera-header-logo {
+    max-height: 48px;
+    max-width: 180px;
+  }
+}
+
+.footer-content .logo-block__image {
+  max-height: 56px;
+  max-width: 220px;
+}
+
+/* Hide announcement bar, account icon, footer social */
+.header-announcements,
+announcement-bar-component,
+shopify-account,
+.account-button,
+.footer-utilities .social-icons,
+.footer-utilities [class*="social-links"] {
+  display: none !important;
+}
+
+/* Sale price accent */
+.price--on-sale .price-item--sale,
+.price .price-item--last {
+  color: #d9534f !important;
+}
+
+.badge--sale {
+  background: #d9534f !important;
+  color: #fff !important;
+}
+
+/* Gold accent for secondary CTAs on hero */
+.button-secondary:hover {
+  border-color: #c8a96e !important;
+}
+
+/* Footer – Luméra dark brand */
+footer .section.color-scheme-5,
+footer .color-scheme-5 {
+  --color-background: #0d0d0d;
+  --color-foreground: rgba(255, 255, 255, 0.8);
+  --color-foreground-heading: #ffffff;
+}
+
+.footer-content .text-block h4,
+.footer-content .rte h4 {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 13px;
+}
+
+.footer-content .text-block p,
+.footer-content .rte p {
+  font-size: 0.81rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.footer-content .text-block a,
+.footer-content .rte a {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-content .text-block a:hover,
+.footer-content .rte a:hover {
+  color: #fff;
+}
+
+.footer-utilities {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Header – clean white bar */
+.header .section.color-scheme-1 {
+  --color-background: #ffffff;
+}
+
+.lumera-homepage-section {
+  padding: 0 !important;
+}
+
+.lumera-homepage-section > .section-background {
+  display: none;
+}

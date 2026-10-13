@@ -1,0 +1,124 @@
+<div class="legal-page container">
+  <h1>Widerrufsbelehrung & Widerrufsformular</h1>
+
+  <h2>Widerrufsrecht</h2>
+  <p>
+    Sie haben das Recht, binnen <strong>vierzehn Tagen</strong> ohne Angabe von Gründen diesen Vertrag zu widerrufen.
+  </p>
+  <p>
+    Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter,
+    der nicht der Beförderer ist, die letzte Ware in Besitz genommen haben bzw. hat.
+  </p>
+  <p>
+    Um Ihr Widerrufsrecht auszuüben, müssen Sie uns
+  </p>
+  <p>
+    <strong>[FIRMA / VOLLSTÄNDIGER NAME]</strong><br>
+    [STRASSE UND HAUSNUMMER]<br>
+    [PLZ ORT]<br>
+    E-Mail: [EMAIL]<br>
+    Telefon: [TELEFON]
+  </p>
+  <p>
+    mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder eine E-Mail) über Ihren
+    Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular
+    verwenden, das jedoch nicht vorgeschrieben ist.
+  </p>
+  <p>
+    Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts
+    vor Ablauf der Widerrufsfrist absenden.
+  </p>
+
+  <h2>Folgen des Widerrufs</h2>
+  <p>
+    Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben,
+    einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie
+    eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben),
+    unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über
+    Ihren Widerruf dieses Vertrags bei uns eingegangen ist.
+  </p>
+  <p>
+    Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion
+    eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall
+    werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.
+  </p>
+  <p>
+    Wir können die Rückzahlung verweigern, bis wir die Waren wieder zurückerhalten haben oder bis Sie den
+    Nachweis erbracht haben, dass Sie die Waren zurückgesandt haben, je nachdem, welches der frühere Zeitpunkt ist.
+  </p>
+  <p>
+    Sie haben die Waren unverzüglich und in jedem Fall spätestens binnen vierzehn Tagen ab dem Tag, an dem Sie
+    uns über den Widerruf dieses Vertrags unterrichten, an uns zurückzusenden oder zu übergeben.
+    Die Frist ist gewahrt, wenn Sie die Waren vor Ablauf der Frist von vierzehn Tagen absenden.
+  </p>
+  <p>
+    Wir tragen die Kosten der Rücksendung der Waren (kostenlose Rücksendung).
+  </p>
+  <p>
+    Sie müssen für einen etwaigen Wertverlust der Waren nur aufkommen, wenn dieser Wertverlust auf einen zur
+    Prüfung der Beschaffenheit, Eigenschaften und Funktionsweise der Waren nicht notwendigen Umgang mit
+    ihnen zurückzuführen ist.
+  </p>
+
+  <hr>
+
+  <h2>Muster-Widerrufsformular</h2>
+  <p>(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.)</p>
+
+  <div class="widerruf-form-box">
+    <p>An:</p>
+    <p>
+      [FIRMA / VOLLSTÄNDIGER NAME]<br>
+      [STRASSE UND HAUSNUMMER]<br>
+      [PLZ ORT]<br>
+      E-Mail: [EMAIL]
+    </p>
+    <p>
+      Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf
+      der folgenden Waren (*) / die Erbringung der folgenden Dienstleistung (*)
+    </p>
+    <p>Bestellt am (*) _____________ / erhalten am (*) _____________</p>
+    <p>Name des/der Verbraucher(s): _____________</p>
+    <p>Anschrift des/der Verbraucher(s): _____________</p>
+    <p>Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier): _____________</p>
+    <p>Datum: _____________</p>
+    <p><small>(*) Unzutreffendes streichen.</small></p>
+  </div>
+
+  <h2>Online-Widerrufsformular</h2>
+  <p>Sie können den Widerruf auch bequem online über unser Kontaktformular einreichen:</p>
+
+  {% form 'contact' %}
+    {% if form.posted_successfully? %}
+      <p class="form-success">Ihre Widerrufserklärung wurde erfolgreich übermittelt. Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+    {% endif %}
+    <div class="form-row">
+      <label for="widerruf-name">Vollständiger Name *</label>
+      <input type="text" id="widerruf-name" name="contact[name]" required class="form-input" placeholder="Vor- und Nachname">
+    </div>
+    <div class="form-row">
+      <label for="widerruf-email">E-Mail-Adresse *</label>
+      <input type="email" id="widerruf-email" name="contact[email]" required class="form-input" placeholder="ihre@email.de">
+    </div>
+    <div class="form-row">
+      <label for="widerruf-order">Bestellnummer *</label>
+      <input type="text" id="widerruf-order" name="contact[order_number]" required class="form-input" placeholder="z.B. #1234">
+    </div>
+    <div class="form-row">
+      <label for="widerruf-date">Bestelldatum *</label>
+      <input type="date" id="widerruf-date" name="contact[order_date]" required class="form-input">
+    </div>
+    <div class="form-row">
+      <label for="widerruf-product">Produkt(e) *</label>
+      <input type="text" id="widerruf-product" name="contact[product]" required class="form-input" placeholder="Produktname(n)">
+    </div>
+    <div class="form-row">
+      <label for="widerruf-message">Widerrufserklärung</label>
+      <textarea id="widerruf-message" name="contact[body]" class="form-textarea" rows="4" placeholder="Hiermit widerrufe ich den abgeschlossenen Kaufvertrag..."></textarea>
+    </div>
+    <input type="hidden" name="contact[subject]" value="Widerruf / Rücksendung">
+    <button type="submit" class="btn btn--primary">Widerruf absenden</button>
+  {% endform %}
+
+  <p><em>Stand: Juni 2026</em></p>
+</div>

@@ -1,0 +1,69 @@
+{% comment %}
+  KeyCRM Order Integration Snippet
+  Included in order-confirmation / thank-you page via theme.liquid or order-status.liquid.
+  Sends order data to KeyCRM API after successful Shopify checkout.
+
+  HOW TO USE IN SHOPIFY:
+  1. Go to Shopify Admin → Settings → Checkout → Order status page
+  2. Add this script in the "Additional scripts" section (use Liquid variables available there).
+
+  OR: Add as a Shopify App Proxy / Webhook (recommended for production).
+{% endcomment %}
+
+<script>
+(function(){
+  var KEYCRM_KEY = 'dc8a23f9b5251601fb4a08d5360157b5d9fce065';
+
+  {% if order %}
+  var orderData = {
+    source_id: 1,
+    buyer: {
+      full_name: {{ order.billing_address.name | json }},
+      phone: {{ order.billing_address.phone | json }},
+      email: {{ order.email | json }}
+    },
+    shipping: {
+      shipping_service: {{ order.shipping_lines.first.title | json }},
+      address: {
+        country: {{ order.shipping_address.country | json }},
+        city: {{ order.shipping_address.city | json }},
+        zip: {{ order.shipping_address.zip | json }},
+        address: {{ order.shipping_address.address1 | json }}
+      }
+    },
+    products: [
+      {% for item in order.line_items %}
+      {
+        name: {{ item.title | json }},
+        sku: {{ item.sku | json }},
+        quantity: {{ item.quantity }},
+        price: {{ item.price | money_without_currency | remove: ',' | remove: '.' | times: 0.01 }},
+        properties: [
+          {% for prop in item.properties %}
+          { "name": {{ prop.first | json }}, "value": {{ prop.last | json }} }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ]
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ],
+    total_price: {{ order.total_price | money_without_currency | remove: ',' | remove: '.' | times: 0.01 }},
+    shipping_price: {{ order.shipping_price | money_without_currency | remove: ',' | remove: '.' | times: 0.01 }},
+    discount: {{ order.total_discounts | money_without_currency | remove: ',' | remove: '.' | times: 0.01 }},
+    currency_code: {{ order.currency | json }},
+    comment: "Shopify Order #{{ order.order_number }} – {{ order.created_at | date: '%d.%m.%Y %H:%M' }}"
+  };
+
+  fetch('https://openapi.keycrm.app/v1/order', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + KEYCRM_KEY
+    },
+    body: JSON.stringify(orderData)
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(d){ console.log('[LUMÉRA] KeyCRM order created:', d); })
+  .catch(function(e){ console.warn('[LUMÉRA] KeyCRM error:', e); });
+  {% endif %}
+})();
+</script>

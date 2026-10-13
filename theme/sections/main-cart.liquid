@@ -1,0 +1,133 @@
+{% if cart.item_count > 0 %}
+<div class="cart-page container">
+  <h1 class="cart-page__title">Warenkorb</h1>
+
+  <div class="cart-page__inner">
+    <div class="cart-page__items">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th class="cart-table__col--product" scope="col">Produkt</th>
+            <th class="cart-table__col--price" scope="col">Preis</th>
+            <th class="cart-table__col--qty" scope="col">Menge</th>
+            <th class="cart-table__col--total" scope="col">Gesamt</th>
+            <th class="cart-table__col--remove" scope="col"><span class="sr-only">Entfernen</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in cart.items %}
+            <tr class="cart-table__row" data-item-key="{{ item.key }}">
+              <td class="cart-table__col--product">
+                <div class="cart-item">
+                  <a href="{{ item.url }}" class="cart-item__image-link">
+                    {% if item.image != blank %}
+                      <img src="{{ item.image | img_url: '120x' }}" alt="{{ item.image.alt | escape }}" class="cart-item__image" width="80" height="80">
+                    {% endif %}
+                  </a>
+                  <div class="cart-item__details">
+                    <a href="{{ item.url }}" class="cart-item__title">{{ item.product.title }}</a>
+                    {% unless item.product.has_only_default_variant %}
+                      <div class="cart-item__variant">
+                        {% for option in item.options_with_values %}
+                          <span>{{ option.name }}: {{ option.value }}</span>
+                        {% endfor %}
+                      </div>
+                    {% endunless %}
+                    <p class="cart-item__delivery">Lieferzeit: 5–10 Werktage</p>
+                  </div>
+                </div>
+              </td>
+              <td class="cart-table__col--price">
+                {% if item.original_price != item.final_price %}
+                  <s class="price--compare">{{ item.original_price | money }}</s>
+                  <span class="price--sale">{{ item.final_price | money }}</span>
+                {% else %}
+                  {{ item.original_price | money }}
+                {% endif %}
+              </td>
+              <td class="cart-table__col--qty">
+                <div class="quantity-selector">
+                  <button type="button" class="quantity-btn cart-qty-minus" data-item-key="{{ item.key }}" data-qty="{{ item.quantity | minus: 1 }}" aria-label="Menge verringern">−</button>
+                  <input type="number" value="{{ item.quantity }}" min="0" data-item-key="{{ item.key }}" class="quantity-input cart-qty-input" aria-label="Menge">
+                  <button type="button" class="quantity-btn cart-qty-plus" data-item-key="{{ item.key }}" data-qty="{{ item.quantity | plus: 1 }}" aria-label="Menge erhöhen">+</button>
+                </div>
+              </td>
+              <td class="cart-table__col--total">
+                <span class="cart-item__line-total">{{ item.final_line_price | money }}</span>
+              </td>
+              <td class="cart-table__col--remove">
+                <button type="button" class="cart-item__remove" data-item-key="{{ item.key }}" aria-label="Artikel entfernen">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg>
+                </button>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cart-page__summary">
+      <div class="cart-summary">
+        <h2 class="cart-summary__title">Bestellübersicht</h2>
+        <div class="cart-summary__row">
+          <span>Zwischensumme</span>
+          <span id="cart-subtotal-display">{{ cart.total_price | money }}</span>
+        </div>
+        <div class="cart-summary__row">
+          <span>Versand</span>
+          <span class="cart-summary__shipping">Kostenlos</span>
+        </div>
+        <div class="cart-summary__row cart-summary__row--total">
+          <strong>Gesamt</strong>
+          <strong id="cart-total-display">{{ cart.total_price | money }}</strong>
+        </div>
+        <p class="cart-summary__tax">inkl. 19% MwSt.</p>
+        <!-- Shopify Payments native checkout button -->
+        <a href="/checkout" class="btn btn--primary btn--full btn--large">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:6px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Sicher zur Kasse
+        </a>
+        <p style="text-align:center;font-size:.72rem;color:#888;margin:6px 0 12px">
+          Bezahlung über <strong style="color:#5a8e00">Shopify Payments</strong>
+        </p>
+        <a href="/collections/all" class="btn btn--secondary btn--full">Weiter einkaufen</a>
+
+        <div class="cart-summary__payment-icons">
+          <p class="cart-summary__payment-label">Wir akzeptieren:</p>
+          <div class="cart-summary__icons">
+            <span class="payment-badge">Visa</span>
+            <span class="payment-badge">Mastercard</span>
+            <span class="payment-badge">AMEX</span>
+            <span class="payment-badge">Klarna</span>
+            <span class="payment-badge">Apple Pay</span>
+            <span class="payment-badge">Shop Pay</span>
+          </div>
+        </div>
+
+        <div class="cart-summary__return-note">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          100 Tage Rückgaberecht – Risikolos bestellen
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% else %}
+<div class="cart-page cart-page--empty container">
+  <h1 class="cart-page__title">Warenkorb</h1>
+  <div class="cart-page__empty">
+    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+    <h2>Dein Warenkorb ist leer</h2>
+    <p>Schau dir unsere Produkte an und füge sie zu deinem Warenkorb hinzu.</p>
+    <a href="/collections/all" class="btn btn--primary">Weiter einkaufen</a>
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Warenkorb",
+  "settings": []
+}
+{% endschema %}

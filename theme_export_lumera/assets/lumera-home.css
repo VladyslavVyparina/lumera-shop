@@ -1,0 +1,593 @@
+/* Luméra homepage – from preview.html (header/footer excluded) */
+.lumera-home {
+  --lum-black: #0d0d0d;
+  --lum-dark: #1a1a1a;
+  --lum-dgray: #4a4a4a;
+  --lum-gray: #8a8a8a;
+  --lum-lgray: #e0e0e0;
+  --lum-ultra: #f8f8f8;
+  --lum-gold: #c8a96e;
+  --lum-sale: #d9534f;
+  --lum-ok: #2d8653;
+  --lum-r: 6px;
+  --lum-rl: 12px;
+  font-family: 'DM Sans', var(--font-body--family), sans-serif;
+}
+
+.lumera-home .lum-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.lumera-home .lum-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: var(--lum-r);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: all 0.2s;
+  text-decoration: none;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-family: inherit;
+}
+
+.lumera-home .lum-btn-gold {
+  background: var(--lum-gold);
+  color: var(--lum-black);
+  border-color: var(--lum-gold);
+}
+
+.lumera-home .lum-btn-gold:hover {
+  background: #b5954e;
+  transform: translateY(-1px);
+}
+
+.lumera-home .lum-btn-lg {
+  padding: 14px 36px;
+  font-size: 0.88rem;
+}
+
+.lumera-home .lum-btn-ghost {
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  color: #fff;
+  background: transparent;
+}
+
+.lumera-home .lum-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Hero */
+.lumera-home .lum-hero {
+  position: relative;
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  background: var(--lum-dark);
+  overflow: hidden;
+}
+
+.lumera-home .lum-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.lumera-home .lum-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.lumera-home .lum-hero-ov {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.lumera-home .lum-hero-c {
+  position: relative;
+  z-index: 1;
+  max-width: 580px;
+  padding: 0 20px;
+}
+
+.lumera-home .lum-hero-tag {
+  display: inline-block;
+  background: var(--lum-gold);
+  color: var(--lum-black);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 13px;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+.lumera-home .lum-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 14px;
+}
+
+.lumera-home .lum-hero h1 em {
+  color: var(--lum-gold);
+  font-style: normal;
+}
+
+.lumera-home .lum-hero p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 440px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.lumera-home .lum-hbtns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Features bar */
+.lumera-home .lum-fbar {
+  background: var(--lum-ultra);
+  border-top: 1px solid var(--lum-lgray);
+  border-bottom: 1px solid var(--lum-lgray);
+  padding: 20px 0;
+}
+
+.lumera-home .lum-fbar-in {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.lumera-home .lum-fi {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lumera-home .lum-fi-ico {
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.lumera-home .lum-fi strong {
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: block;
+  color: var(--lum-black);
+}
+
+.lumera-home .lum-fi span {
+  font-size: 0.71rem;
+  color: var(--lum-gray);
+  font-weight: 300;
+}
+
+/* Section */
+.lumera-home .lum-sec {
+  padding: 68px 0;
+}
+
+.lumera-home .lum-sh {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lumera-home .lum-sh h2 {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.lumera-home .lum-sh a {
+  font-size: 0.76rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--lum-dgray);
+  text-decoration: underline;
+}
+
+/* Product grid */
+.lumera-home .lum-pgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.lumera-home .lum-pcard {
+  background: #fff;
+  border-radius: var(--lum-rl);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+  border: 1px solid var(--lum-lgray);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.lumera-home .lum-pcard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.16);
+}
+
+.lumera-home .lum-pcimg {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--lum-ultra);
+}
+
+.lumera-home .lum-pcimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s;
+}
+
+.lumera-home .lum-pcard:hover .lum-pcimg img {
+  transform: scale(1.055);
+}
+
+.lumera-home .lum-pbadge {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  background: var(--lum-sale);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.lumera-home .lum-pbody {
+  padding: 11px 13px 14px;
+}
+
+.lumera-home .lum-ptitle {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--lum-dark);
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+.lumera-home .lum-pprices {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 7px;
+}
+
+.lumera-home .lum-p-old {
+  color: var(--lum-gray);
+  text-decoration: line-through;
+  font-size: 0.78rem;
+  font-weight: 300;
+}
+
+.lumera-home .lum-p-now {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--lum-sale);
+}
+
+.lumera-home .lum-pdel {
+  font-size: 0.7rem;
+  color: var(--lum-ok);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 9px;
+  font-weight: 400;
+}
+
+.lumera-home .lum-pc-btn {
+  background: var(--lum-black);
+  color: #fff;
+  border: none;
+  padding: 9px;
+  border-radius: var(--lum-r);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s;
+  font-family: inherit;
+  text-align: center;
+  display: block;
+}
+
+/* Stats */
+.lumera-home .lum-stats {
+  background: var(--lum-black);
+  color: #fff;
+  padding: 52px 0;
+}
+
+.lumera-home .lum-stats-in {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.lumera-home .lum-sn {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--lum-gold);
+  display: block;
+}
+
+.lumera-home .lum-sl {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+  font-weight: 300;
+}
+
+.lumera-home .lum-ss {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 2px;
+}
+
+/* About */
+.lumera-home .lum-about {
+  background: var(--lum-ultra);
+}
+
+.lumera-home .lum-about-inner {
+  max-width: 840px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lumera-home .lum-about h2 {
+  font-size: clamp(1.4rem, 3.5vw, 2.1rem);
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  margin-bottom: 12px;
+}
+
+.lumera-home .lum-about > .lum-container > p {
+  color: var(--lum-gray);
+  line-height: 1.85;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.lumera-home .lum-feats-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.lumera-home .lum-feat-ico-item {
+  text-align: center;
+  padding: 22px 12px;
+}
+
+.lumera-home .lum-feat-ico-item img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin: 0 auto 14px;
+  opacity: 0.85;
+}
+
+.lumera-home .lum-feat-ico-item strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.lumera-home .lum-feat-ico-item span {
+  font-size: 0.76rem;
+  color: var(--lum-gray);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* FAQ */
+.lumera-home .lum-faq-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.lumera-home .lum-acc {
+  border-top: 1px solid var(--lum-lgray);
+}
+
+.lumera-home .lum-aci {
+  border-bottom: 1px solid var(--lum-lgray);
+}
+
+.lumera-home .lum-acb {
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0;
+  font-size: 0.84rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  color: var(--lum-dark);
+  font-family: inherit;
+}
+
+.lumera-home .lum-acb::after {
+  content: '+';
+  font-size: 1.1rem;
+  color: var(--lum-gray);
+  font-weight: 300;
+  flex-shrink: 0;
+}
+
+.lumera-home .lum-acb.open::after {
+  content: '−';
+}
+
+.lumera-home .lum-acbd {
+  display: none;
+  padding-bottom: 13px;
+  font-size: 0.81rem;
+  color: var(--lum-dgray);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.lumera-home .lum-acbd.open {
+  display: block;
+}
+
+/* Newsletter */
+.lumera-home .lum-nl {
+  background: var(--lum-black);
+  color: #fff;
+}
+
+.lumera-home .lum-nl-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lumera-home .lum-nl h2 {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 9px;
+  color: #fff;
+}
+
+.lumera-home .lum-nl-sub {
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 26px;
+  font-weight: 300;
+}
+
+.lumera-home .lum-nl-sub strong {
+  color: var(--lum-gold);
+}
+
+.lumera-home .lum-nl-form {
+  display: flex;
+  gap: 9px;
+  max-width: 420px;
+  margin: 0 auto 14px;
+}
+
+.lumera-home .lum-nl-inp {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+  padding: 9px 11px;
+  border-radius: var(--lum-r);
+  font-size: 0.81rem;
+  outline: none;
+  min-width: 0;
+  font-family: inherit;
+}
+
+.lumera-home .lum-nl-inp::placeholder {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.lumera-home .lum-nl-sbtn {
+  background: #fff;
+  color: var(--lum-black);
+  border: none;
+  padding: 9px 13px;
+  border-radius: var(--lum-r);
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.lumera-home .lum-nl-legal {
+  font-size: 0.71rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 300;
+}
+
+.lumera-home .lum-nl-legal a {
+  color: var(--lum-gold);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .lumera-home .lum-fbar-in {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .lumera-home .lum-stats-in {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .lumera-home .lum-hero {
+    min-height: 68vh;
+  }
+
+  .lumera-home .lum-pgrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lumera-home .lum-fbar-in {
+    grid-template-columns: 1fr;
+  }
+
+  .lumera-home .lum-hbtns {
+    flex-direction: column;
+  }
+
+  .lumera-home .lum-hbtns .lum-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "lumera_homepage": {
+      "type": "lumera-homepage",
+      "settings": {
+        "product_handle": "lumera-3d-kompressionsleggings",
+        "collection": "all",
+        "max_products": 16,
+        "hero_tag": "LUMÉRA · 2026 COLLECTION",
+        "hero_heading": "Die Nr. 1 für<br>dein <em>Wohlgefühl</em>",
+        "hero_text": "Glattere Haut, bessere Durchblutung & mehr Leichtigkeit im Alltag – für ein starkes Körpergefühl in jedem Alter.",
+        "hero_btn1": "Jetzt entdecken",
+        "hero_btn2": "Mehr erfahren",
+        "products_title": "LUMÉRA Collection",
+        "products_link": "Alle anzeigen →"
+      }
+    }
+  },
+  "order": [
+    "lumera_homepage"
+  ]
+}

@@ -1,0 +1,36 @@
+<div class="announcement-bar" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
+  <div class="announcement-bar__inner">
+    <p class="announcement-bar__message">{{ section.settings.message }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ankündigungsleiste",
+  "settings": [
+    {
+      "type": "text",
+      "id": "message",
+      "label": "Nachricht",
+      "default": "Kostenloser Versand & 100 Tage Rückgaberecht"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Hintergrundfarbe",
+      "default": "#7B5EA7"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Textfarbe",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ankündigungsleiste"
+    }
+  ]
+}
+{% endschema %}

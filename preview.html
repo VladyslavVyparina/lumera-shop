@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-t="meta.title">LUMÉRA – Premium Kompressionsleggings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap">
+<style>
+:root{
+  --black:#0d0d0d;--dark:#1a1a1a;--dgray:#4a4a4a;
+  --gray:#8a8a8a;--lgray:#e0e0e0;--ultra:#f8f8f8;
+  --white:#fff;--gold:#C8A96E;--sale:#d9534f;--ok:#2d8653;
+  --r:6px;--rl:12px;
+  --shadow:0 2px 12px rgba(0,0,0,.07);
+  --shadow-lg:0 8px 40px rgba(0,0,0,.16);
+  --hh:72px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;font-weight:400;color:var(--dark);background:#fff;line-height:1.6;overflow-x:hidden;font-size:15px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.container{max-width:1280px;margin:0 auto;padding:0 20px}
+
+/* ── Buttons ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 26px;border-radius:var(--r);font-size:.82rem;font-weight:600;letter-spacing:.5px;cursor:pointer;border:1.5px solid transparent;transition:all .2s;text-decoration:none;white-space:nowrap;text-transform:uppercase;font-family:inherit}
+.btn-dark{background:var(--black);color:#fff;border-color:var(--black)}
+.btn-dark:hover{background:#333;transform:translateY(-1px);box-shadow:0 5px 18px rgba(0,0,0,.22)}
+.btn-outline{background:transparent;color:var(--black);border-color:var(--black)}
+.btn-outline:hover{background:var(--black);color:#fff}
+.btn-gold{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.btn-gold:hover{background:#b5954e;transform:translateY(-1px)}
+.btn-full{width:100%}
+.btn-lg{padding:14px 36px;font-size:.88rem}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none!important}
+
+/* ── HEADER ── */
+.header{background:#fff;border-bottom:1px solid var(--lgray);position:sticky;top:0;z-index:200;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.hinner{display:flex;align-items:center;height:var(--hh);gap:0;position:relative}
+.logo-wrap{flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:flex-start;margin-right:32px;text-decoration:none}
+.logo-css{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+.logo-name{font-size:1.55rem;font-weight:200;letter-spacing:2.5px;color:var(--dark);font-family:'DM Sans',sans-serif;line-height:1;display:block}
+.logo-tagline{font-size:.42rem;font-weight:400;letter-spacing:3.5px;color:#aaa;text-transform:uppercase;line-height:1;display:block}
+.co-brand-header,.shoppay-brand-header{background:#0d0d0d;padding:16px 20px;text-align:center;position:sticky;top:0;z-index:11}
+.co-brand-header img,.shoppay-brand-header img{height:52px;width:auto;max-width:220px;object-fit:contain;display:inline-block}
+.logo-img-brand{height:58px;width:auto;max-width:220px;object-fit:contain;display:block}
+.logo-img-brand--white{height:56px;width:auto;max-width:200px;object-fit:contain;display:block}
+nav.mainnav{flex:1;display:flex;justify-content:center;gap:2px}
+nav.mainnav a{font-size:.78rem;font-weight:500;letter-spacing:.3px;padding:7px 12px;border-radius:var(--r);color:var(--dgray);transition:all .2s;text-transform:uppercase}
+nav.mainnav a:hover{background:var(--ultra);color:var(--black)}
+.hright{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.lang-sw{display:flex;border:1.5px solid var(--lgray);border-radius:20px;overflow:hidden;font-size:.72rem;font-weight:600}
+.lang-btn{background:none;border:none;padding:4px 9px;cursor:pointer;color:var(--gray);transition:all .2s;letter-spacing:.5px;font-family:inherit}
+.lang-btn.active{background:var(--black);color:#fff}
+.icon-btn{background:none;border:none;cursor:pointer;padding:8px;color:var(--dark);display:flex;align-items:center;border-radius:var(--r);transition:color .2s;position:relative}
+.icon-btn:hover{color:var(--black)}
+.cart-cnt{position:absolute;top:2px;right:2px;background:var(--black);color:#fff;font-size:.55rem;font-weight:700;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.hmbtn{display:none}
+.search-bar{display:none;background:var(--ultra);border-bottom:1px solid var(--lgray);padding:10px 0}
+.search-bar.open{display:block}
+.sfm{display:flex;align-items:center;gap:10px;max-width:540px;margin:0 auto}
+.sinput{flex:1;border:1.5px solid var(--lgray);border-radius:var(--r);padding:9px 14px;font-size:.88rem;outline:none;background:#fff;transition:border-color .2s;font-family:inherit}
+.sinput:focus{border-color:var(--black)}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:82vh;display:flex;align-items:center;background:var(--dark);overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.5}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.8) 0%,rgba(0,0,0,.2) 100%)}
+.hero-c{position:relative;z-index:1;max-width:580px;padding:0 20px}
+.hero-tag{display:inline-block;background:var(--gold);color:var(--black);font-size:.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 13px;border-radius:2px;margin-bottom:16px}
+.hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:600;color:#fff;line-height:1.1;letter-spacing:-1px;margin-bottom:14px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.8);max-width:440px;line-height:1.8;margin-bottom:28px}
+.hbtns{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ── FEATURES BAR ── */
+.fbar{background:var(--ultra);border-top:1px solid var(--lgray);border-bottom:1px solid var(--lgray);padding:20px 0}
+.fbar-in{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fi{display:flex;align-items:center;gap:10px}
+.fi-ico{width:32px;height:32px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow)}
+.fi strong{font-size:.78rem;font-weight:600;display:block;color:var(--black)}
+.fi span{font-size:.71rem;color:var(--gray);font-weight:300}
+
+/* ── SECTION HEAD ── */
+.sec{padding:68px 0}
+.sh{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:10px}
+.sh h2{font-size:clamp(1.2rem,3vw,1.8rem);font-weight:600;letter-spacing:-.3px}
+.sh a{font-size:.76rem;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--dgray);text-decoration:underline}
+
+/* ── PRODUCT GRID ── */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.nores{display:none;text-align:center;padding:40px;color:var(--gray);font-size:.9rem}
+.nores.show{display:block}
+
+/* ── PRODUCT CARD ── */
+.pcard{background:#fff;border-radius:var(--rl);overflow:hidden;cursor:pointer;transition:transform .25s,box-shadow .25s;border:1px solid var(--lgray)}
+.pcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.pcimg{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--ultra)}
+.pcimg img.main-img{width:100%;height:100%;object-fit:cover;transition:transform .5s,opacity .3s}
+.pcard:hover .pcimg img.main-img{transform:scale(1.04)}
+.pbadge{position:absolute;top:9px;left:9px;background:var(--sale);color:#fff;font-size:.65rem;font-weight:600;padding:3px 8px;border-radius:2px;letter-spacing:1px;text-transform:uppercase;z-index:2}
+.pbody{padding:11px 13px 14px}
+.ptitle{font-size:.82rem;font-weight:500;color:var(--dark);margin-bottom:6px;line-height:1.35}
+.pc-swatches{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:7px}
+.pc-sw{width:17px;height:17px;border-radius:50%;border:1.5px solid rgba(0,0,0,.1);cursor:pointer;transition:transform .15s,box-shadow .15s;flex-shrink:0;display:block}
+.pc-sw:hover,.pc-sw.active{transform:scale(1.35);box-shadow:0 0 0 2px var(--black)}
+.pprices{display:flex;align-items:center;gap:6px;margin-bottom:7px}
+.p-old{color:var(--gray);text-decoration:line-through;font-size:.78rem;font-weight:300}
+.p-now{font-size:.92rem;font-weight:600;color:var(--sale)}
+.pdel{font-size:.7rem;color:var(--ok);display:flex;align-items:center;gap:4px;margin-bottom:9px;font-weight:400}
+.pc-btn{background:var(--black);color:#fff;border:none;padding:9px;border-radius:var(--r);font-size:.76rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;width:100%;transition:all .2s;font-family:inherit}
+.pc-btn:hover{background:#333;transform:translateY(-1px)}
+
+/* ── SIZE GUIDE MODAL ── */
+.sg-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1200;opacity:0;pointer-events:none;transition:opacity .25s;display:flex;align-items:center;justify-content:center}
+.sg-overlay.open{opacity:1;pointer-events:all}
+.sg-modal{background:#fff;border-radius:var(--rl);width:min(680px,94vw);max-height:90vh;overflow-y:auto;position:relative;box-shadow:var(--shadow-lg);transform:scale(.95);transition:transform .25s}
+.sg-overlay.open .sg-modal{transform:scale(1)}
+.sg-head{display:flex;justify-content:space-between;align-items:center;padding:22px 26px 14px;border-bottom:1px solid var(--lgray);position:sticky;top:0;background:#fff;z-index:2}
+.sg-head h2{font-size:1.1rem;font-weight:600}
+.sg-x{background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--gray);line-height:1}
+.sg-x:hover{color:var(--black)}
+.sg-body{padding:22px 26px 30px}
+.sg-intro{font-size:.85rem;color:var(--dgray);font-weight:300;margin-bottom:18px;line-height:1.6;font-style:italic}
+.sg-diagram{background:var(--ultra);border-radius:var(--r);overflow:hidden;margin-bottom:20px;max-height:320px;display:flex;align-items:center;justify-content:center}
+.sg-diagram img{max-height:320px;width:auto;margin:0 auto}
+.sg-table{width:100%;border-collapse:collapse;margin-bottom:20px;font-size:.85rem}
+.sg-table th{background:var(--black);color:#fff;padding:10px 12px;text-align:left;font-weight:500;font-size:.78rem;letter-spacing:.3px}
+.sg-table td{padding:9px 12px;border-bottom:1px solid var(--lgray)}
+.sg-table tr:nth-child(even) td{background:var(--ultra)}
+.sg-tip{font-size:.83rem;font-weight:300;color:var(--dgray);line-height:1.7;font-style:italic;border-top:1px solid var(--lgray);padding-top:16px}
+.sg-tip strong{font-weight:600;color:var(--dark);display:block;margin:14px 0 5px;font-style:normal}
+
+/* ── PRODUCT PAGE (full screen) ── */
+.moverlay{display:none!important}
+.product-page{display:none;position:fixed;top:var(--hh);left:0;right:0;bottom:0;background:#fff;z-index:150;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.product-page.open{display:block}
+.product-back{display:flex;align-items:center;gap:8px;padding:14px 20px;cursor:pointer;font-size:.8rem;font-weight:500;color:var(--dgray);border-bottom:1px solid var(--lgray);background:#fff;position:sticky;top:0;z-index:5}
+.product-back:hover{color:var(--black)}
+.product-back svg{opacity:.6}
+.min{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - var(--hh) - 49px);max-width:1280px;margin:0 auto}
+.mgal{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--ultra)}
+.mgal-main{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.mthumbs{position:absolute;bottom:12px;left:10px;display:flex;gap:6px;flex-wrap:wrap;max-width:calc(100% - 20px)}
+.mthumb{width:52px;height:52px;border-radius:5px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color .2s;flex-shrink:0}
+.mthumb.active{border-color:var(--black)}
+.mthumb img{width:100%;height:100%;object-fit:cover}
+.minfo{padding:42px 32px 80px}
+.mbc{font-size:.72rem;color:var(--gray);margin-bottom:8px;font-weight:300}
+.mtitle{font-size:1.5rem;font-weight:600;letter-spacing:-.3px;margin-bottom:5px}
+.mrev{font-size:.78rem;color:var(--gray);display:flex;align-items:center;gap:6px;margin-bottom:12px}
+.stars{color:#f5a623;letter-spacing:-1px}
+.mret{background:#f0fff4;border:1px solid #b2dfcc;color:var(--ok);font-size:.78rem;font-weight:500;padding:7px 12px;border-radius:var(--r);margin-bottom:16px;display:inline-flex;align-items:center;gap:6px}
+.mpr{margin-bottom:16px}
+.mpr .po{font-size:.9rem;color:var(--gray);text-decoration:line-through;font-weight:300}
+.mpr .pn{font-size:1.7rem;font-weight:600;color:var(--sale)}
+.mpr .ps{display:inline-block;background:#fff0f0;color:var(--sale);font-size:.73rem;font-weight:600;padding:3px 9px;border-radius:20px;margin-left:7px}
+.mpr .pt{font-size:.73rem;color:var(--gray);margin-top:3px;font-weight:300}
+.mdel{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--ok);background:#f0fff4;border-left:3px solid var(--ok);padding:8px 12px;border-radius:0 var(--r) var(--r) 0;margin-bottom:16px}
+.mfeats{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:18px}
+.mfeats li{display:flex;align-items:center;gap:7px;font-size:.84rem;font-weight:400}
+.mfeats li::before{content:'✓';color:var(--ok);font-weight:600;flex-shrink:0}
+.olabel{font-size:.73rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--dgray);margin-bottom:8px}
+.olabel b{font-weight:600;color:var(--black);text-transform:none;letter-spacing:0;font-size:.85rem}
+.opt{margin-bottom:18px}
+
+/* Color thumbnails in modal */
+.ct-grid{display:flex;gap:7px;flex-wrap:wrap}
+.ct-item{text-align:center;flex-shrink:0}
+.ct-btn{width:76px;height:76px;border:2px solid transparent;border-radius:8px;overflow:hidden;padding:0;cursor:pointer;background:none;transition:border-color .2s,transform .15s;display:block}
+.ct-btn:hover{transform:scale(1.06)}
+.ct-btn.active{border-color:var(--black);box-shadow:0 0 0 2px var(--black)}
+.ct-btn img{width:100%;height:100%;object-fit:cover;display:block}
+.ct-name{font-size:.62rem}
+.ct-name{display:block;font-size:.6rem;margin-top:3px;color:var(--gray);font-weight:400;max-width:58px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+
+.szbtns{display:flex;gap:6px;flex-wrap:wrap}
+.szb{min-width:46px;padding:7px 11px;border:1.5px solid var(--lgray);background:none;border-radius:var(--r);font-size:.8rem;font-weight:500;cursor:pointer;transition:all .2s;color:var(--dark);font-family:inherit}
+.szb:hover{border-color:var(--black)}
+.szb.active{background:var(--black);border-color:var(--black);color:#fff}
+.szguide-link{font-size:.72rem;color:var(--dgray);cursor:pointer;margin-top:5px;display:inline-flex;align-items:center;gap:4px;text-decoration:underline}
+.qrow{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.qlabel{font-size:.73rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--dgray)}
+.qctrl{display:flex;border:1.5px solid var(--lgray);border-radius:var(--r);overflow:hidden}
+.qctrl button{background:none;border:none;padding:8px 13px;font-size:.95rem;font-weight:500;cursor:pointer;font-family:inherit}
+.qctrl button:hover{background:var(--ultra)}
+.qctrl input{width:46px;text-align:center;border:none;border-left:1.5px solid var(--lgray);border-right:1.5px solid var(--lgray);font-size:.88rem;font-weight:500;outline:none;font-family:inherit}
+.qctrl input::-webkit-inner-spin-button{-webkit-appearance:none}
+.atc-btn{width:100%;padding:14px;background:var(--black);color:#fff;border:1.5px solid var(--black);border-radius:var(--r);font-size:.88rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;cursor:pointer;transition:all .35s cubic-bezier(.4,0,.2,1);margin-bottom:12px;font-family:inherit}
+.atc-btn:hover:not(.added){background:#333;transform:translateY(-1px);box-shadow:0 5px 18px rgba(0,0,0,.28)}
+.atc-btn.added{background:transparent!important;color:var(--black)!important;border:1.5px solid var(--black)!important;box-shadow:none!important;transform:none!important}
+.opt-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.opt-hdr .olabel{margin-bottom:0}
+.szguide-link{display:inline-flex;align-items:center;gap:5px;font-size:.72rem;color:var(--dgray);cursor:pointer;text-decoration:underline;background:none;border:none;font-family:inherit;padding:0;letter-spacing:.3px}
+.szguide-link:hover{color:var(--black)}
+.szguide-link svg{opacity:.65;flex-shrink:0}
+.phone-row{display:flex;gap:8px;align-items:stretch}
+.phone-row select{width:108px;flex-shrink:0;padding:10px 8px;font-size:.82rem}
+.phone-row input{flex:1;min-width:0}
+.frow input.err,.frow select.err{border-color:var(--sale);background:#fff8f8}
+.field-err{font-size:.7rem;color:var(--sale);margin-top:4px;display:none}
+.field-err.show{display:block}
+.co-pay-options{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.co-pay-opt{display:flex;align-items:center;justify-content:space-between;border:1.5px solid var(--lgray);border-radius:var(--r);padding:14px 16px;cursor:pointer;transition:all .2s;background:#fff}
+.co-pay-opt:hover{border-color:#bbb}
+.co-pay-opt.selected{border-color:var(--black);background:var(--ultra)}
+.co-pay-opt input[type=radio]{width:16px;height:16px;accent-color:var(--black);flex-shrink:0;margin-right:12px}
+.co-pay-opt-left{display:flex;align-items:center;flex:1}
+.co-pay-opt-label{font-size:.88rem;font-weight:500}
+.co-pay-logos{display:flex;gap:8px;align-items:center}
+.co-pay-logos img{height:24px;width:auto;object-fit:contain}
+.co-express{display:flex;gap:10px;margin-bottom:18px}
+.co-express-btn{flex:1;padding:12px;border-radius:var(--r);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.82rem;font-family:inherit}
+.co-express-shop{background:#5A31F4;color:#fff}
+.co-express-paypal{background:#FFC439;color:#003087}
+.co-divider{display:flex;align-items:center;gap:12px;margin:18px 0;color:var(--gray);font-size:.75rem;text-transform:uppercase;letter-spacing:1px}
+.co-divider::before,.co-divider::after{content:'';flex:1;height:1px;background:var(--lgray)}
+
+/* Payment badges below ATC */
+.pay-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
+.pay-badge{height:26px;border:1px solid var(--lgray);border-radius:4px;padding:2px 7px;display:flex;align-items:center;justify-content:center;background:#fff}
+.pay-badge svg{height:15px;width:auto}
+.pay-badge img{height:22px;max-width:64px;object-fit:contain}
+
+/* Trust list */
+.trust-list{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.tl-item{display:flex;align-items:center;gap:9px;font-size:.8rem;color:var(--dgray);font-weight:400}
+.tl-item svg{flex-shrink:0;color:var(--black);opacity:.7}
+
+/* Accordion */
+.prod-desc{border-top:1px solid var(--lgray);margin-top:16px;padding:16px 0;font-size:.81rem;color:var(--dgray);line-height:1.8;font-weight:300}
+.prod-desc p{margin:0 0 10px}
+.prod-desc .pd-title{font-size:.84rem;font-weight:500;color:var(--dark);margin-bottom:10px}
+.prod-desc .pd-sub{font-size:.82rem;font-weight:500;color:var(--dark);margin-top:6px}
+.prod-desc .pd-list{margin:8px 0 12px;padding-left:0;list-style:none}
+.prod-desc .pd-list li{padding:3px 0;line-height:1.6}
+.acc{border-top:1px solid var(--lgray);margin-top:16px}
+.aci{border-bottom:1px solid var(--lgray)}
+.acb{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:13px 0;font-size:.84rem;font-weight:500;cursor:pointer;text-align:left;color:var(--dark);font-family:inherit}
+.acb::after{content:'+';font-size:1.1rem;color:var(--gray);font-weight:300;flex-shrink:0}
+.acb.open::after{content:'−'}
+.acbd{display:none;padding-bottom:13px;font-size:.81rem;color:var(--dgray);line-height:1.8;font-weight:300}
+.acbd.open{display:block}
+.acbd p{margin-bottom:6px}
+.acbd ul{padding-left:16px;list-style:disc}
+
+/* ── CHECKOUT FULL PAGE ── */
+.co-overlay{display:none}
+.co-modal{display:none;position:fixed;inset:0;background:#f5f5f5;z-index:2000;overflow-y:auto}
+.co-modal.open{display:block}
+.co-page{max-width:1080px;margin:0 auto;padding:32px 20px 60px;display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:start}
+.co-left{background:#fff;border-radius:12px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.co-right{background:#fff;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.06);position:sticky;top:32px}
+.co-logo-bar{display:flex;justify-content:center;align-items:center;gap:16px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--lgray)}
+.co-logo-bar .logo-css{}
+.co-logo-bar .logo-name{font-size:1.4rem;color:var(--dark)}
+.co-top-close{position:fixed;top:14px;right:18px;z-index:12;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:50%;width:32px;height:32px;font-size:1.1rem;cursor:pointer;color:#fff;font-family:inherit;line-height:1;display:flex;align-items:center;justify-content:center}
+.co-right h3,.co-section h3{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;color:var(--dgray);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--lgray)}
+.co-order-item{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--lgray)}
+.co-order-item:last-child{border-bottom:none}
+.co-order-img{width:56px;height:56px;border-radius:8px;overflow:hidden;flex-shrink:0;border:1px solid var(--lgray);position:relative}
+.co-order-img img{width:100%;height:100%;object-fit:cover}
+.co-order-qty{position:absolute;top:-6px;right:-6px;background:var(--gray);color:#fff;font-size:.6rem;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.co-order-info{flex:1;min-width:0}
+.co-order-info strong{display:block;font-size:.84rem;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.co-order-info span{font-size:.75rem;color:var(--gray)}
+.co-order-price{font-size:.88rem;font-weight:600;flex-shrink:0}
+.co-right-totals{margin-top:14px;border-top:1px solid var(--lgray);padding-top:12px}
+.co-right-row{display:flex;justify-content:space-between;font-size:.84rem;padding:4px 0;color:var(--dgray)}
+.co-right-row.total{font-size:1rem;font-weight:600;color:var(--dark);padding-top:10px;border-top:1px solid var(--lgray)}
+.co-right-row.total small{font-size:.7rem;color:var(--gray);font-weight:300;display:block;margin-top:2px}
+/* Shop Pay page */
+.shoppay-page{display:none;position:fixed;inset:0;background:#f5f5f5;z-index:3000;overflow-y:auto}
+.shoppay-page.open{display:block}
+.shoppay-inner{max-width:480px;margin:80px auto 60px;background:#fff;border-radius:12px;padding:40px 36px;box-shadow:0 4px 32px rgba(0,0,0,.1)}
+.shoppay-logo{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:32px}
+.shoppay-logo img{height:36px}
+.shoppay-title{font-size:1.35rem;font-weight:600;margin-bottom:6px;text-align:center}
+.shoppay-sub{font-size:.84rem;color:var(--gray);text-align:center;margin-bottom:24px}
+.shoppay-field{width:100%;border:1.5px solid var(--lgray);border-radius:var(--r);padding:12px 14px;font-size:.9rem;font-family:inherit;outline:none;margin-bottom:12px;transition:border-color .2s}
+.shoppay-field:focus{border-color:#5A31F4}
+.shoppay-btn-main{width:100%;padding:14px;background:#5A31F4;color:#fff;border:none;border-radius:var(--r);font-size:.92rem;font-weight:600;cursor:pointer;font-family:inherit;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:8px}
+.shoppay-btn-passkey{width:100%;padding:13px;background:#fff;color:var(--dark);border:1.5px solid var(--lgray);border-radius:var(--r);font-size:.86rem;font-weight:500;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px}
+.shoppay-back{background:none;border:none;color:var(--gray);font-size:.84rem;cursor:pointer;font-family:inherit;margin-top:16px;display:block;width:100%;text-align:center}
+.shoppay-back:hover{color:var(--dark)}
+.shoppay-legal{font-size:.7rem;color:var(--gray);text-align:center;margin-top:18px;line-height:1.6}
+.shoppay-legal a{color:#5A31F4;text-decoration:underline}
+.co-head{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid var(--lgray);flex-shrink:0}
+.co-head h2{font-size:.88rem;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.co-x{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--gray);line-height:1;font-family:inherit}
+.co-x:hover{color:var(--black)}
+.co-body{flex:1;overflow-y:auto;padding:20px}
+.co-steps{display:flex;gap:4px;margin-bottom:20px}
+.co-step{flex:1;height:2px;border-radius:2px;background:var(--lgray);transition:background .3s}
+.co-step.done{background:var(--ok)}
+.co-step.active{background:var(--black)}
+.co-section{margin-bottom:24px}.co-section:last-of-type{margin-bottom:0}
+.frow{margin-bottom:12px;position:relative}
+.frow label{display:block;font-size:.73rem;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--dgray);margin-bottom:4px}
+.frow input,.frow select{width:100%;border:1.5px solid var(--lgray);border-radius:var(--r);padding:10px 13px;font-size:.88rem;color:var(--dark);outline:none;transition:border-color .2s;background:#fff;font-family:inherit}
+.frow input:focus,.frow select:focus{border-color:var(--black)}
+.frow.half{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ac-drop{position:absolute;top:100%;left:0;right:0;background:#fff;border:1.5px solid var(--black);border-top:none;border-radius:0 0 var(--r) var(--r);max-height:200px;overflow-y:auto;z-index:100;box-shadow:var(--shadow-lg);display:none}
+.ac-drop.open{display:block}
+.ac-item{padding:9px 13px;font-size:.83rem;cursor:pointer;transition:background .15s;border-bottom:1px solid var(--lgray)}
+.ac-item:last-child{border-bottom:none}
+.ac-item:hover{background:var(--ultra)}
+.ac-item .ac-main{font-weight:500;color:var(--dark)}
+.ac-item .ac-sub{font-size:.72rem;color:var(--gray);margin-top:1px}
+.co-summary{background:var(--ultra);border-radius:var(--rl);padding:14px;margin-bottom:18px}
+.cos-title{font-size:.73rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--dgray);margin-bottom:10px}
+.cos-item{display:flex;align-items:center;gap:9px;padding:6px 0;border-bottom:1px solid var(--lgray)}
+.cos-item:last-child{border-bottom:none}
+.cos-img{width:44px;height:44px;border-radius:5px;overflow:hidden;flex-shrink:0}
+.cos-img img{width:100%;height:100%;object-fit:cover}
+.cos-info{flex:1;font-size:.77rem}
+.cos-info strong{display:block;font-weight:500}
+.cos-info span{color:var(--gray);font-size:.72rem}
+.cos-price{font-size:.82rem;font-weight:600}
+.co-total{display:flex;justify-content:space-between;align-items:center;padding:10px 0 0;font-weight:600;font-size:.95rem}
+.co-total-tax{font-size:.72rem;color:var(--gray);margin-bottom:14px;font-weight:300}
+.co-nav{display:flex;gap:9px;margin-top:18px}
+.co-success{display:none;text-align:center;padding:56px 22px}
+.co-success.show{display:block}
+.cos-check{width:68px;height:68px;background:#f0fff4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.co-success h2{font-size:1.4rem;font-weight:600;margin-bottom:9px}
+.co-success p{font-size:.88rem;color:var(--gray);margin-bottom:22px;line-height:1.7;font-weight:300}
+
+/* ── CART DRAWER ── */
+.c-ov{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:500;opacity:0;pointer-events:none;transition:opacity .3s}
+.c-ov.open{opacity:1;pointer-events:all}
+.cdraw{position:fixed;top:0;right:-100%;width:min(420px,100vw);height:100vh;background:#fff;z-index:600;box-shadow:-4px 0 28px rgba(0,0,0,.12);transition:right .3s;display:flex;flex-direction:column}
+.cdraw.open{right:0}
+.ch{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--lgray);flex-shrink:0}
+.ch-left{display:flex;align-items:center;gap:9px}
+.ch h3{font-size:.9rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.ch-cnt{background:var(--black);color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700}
+.cx{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--gray);font-family:inherit;line-height:1}
+.cx:hover{color:var(--black)}
+/* Free shipping banner */
+.free-ship-banner{background:#f0fff4;border-bottom:1px solid #b2dfcc;padding:8px 20px;font-size:.78rem;font-weight:500;color:var(--ok);display:flex;align-items:center;gap:7px;flex-shrink:0}
+.cb{flex:1;overflow-y:auto;padding:0 20px}
+.ce{text-align:center;padding:48px 20px;color:var(--gray)}
+.ci{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--lgray);align-items:flex-start}
+.ci-img{border-radius:7px;overflow:hidden;width:80px;height:80px;flex-shrink:0}
+.ci-img img{width:100%;height:100%;object-fit:cover}
+.ci-body{flex:1}
+.ci-t{font-size:.83rem;font-weight:500;margin-bottom:2px;line-height:1.3}
+.ci-v{font-size:.72rem;color:var(--gray);margin-bottom:8px;font-weight:300}
+.ci-prices{display:flex;align-items:center;gap:7px;margin-bottom:8px}
+.ci-pnow{font-size:.88rem;font-weight:600}
+.ci-pold{font-size:.78rem;color:var(--gray);text-decoration:line-through;font-weight:300}
+.ci-qty{display:flex;align-items:center;gap:8px}
+.ci-qty button{background:var(--ultra);border:1px solid var(--lgray);width:26px;height:26px;border-radius:5px;cursor:pointer;font-size:.9rem;font-weight:500;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.ci-qty button:hover{background:#e8e8e8}
+.ci-qty span{font-size:.85rem;font-weight:600;min-width:16px;text-align:center}
+.ci-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0}
+.ci-rm{background:none;border:none;cursor:pointer;color:var(--gray);padding:4px;transition:color .2s;display:flex;align-items:center}
+.ci-rm:hover{color:var(--sale)}
+.cf{border-top:1px solid var(--lgray);padding:14px 20px 20px;flex-shrink:0}
+.cf-sub{display:flex;justify-content:space-between;font-weight:600;font-size:.95rem;margin-bottom:3px}
+.cf-tax{font-size:.72rem;color:var(--gray);margin-bottom:14px;font-weight:300}
+
+/* ══════════ ANIMATIONS ══════════ */
+/* Scroll-reveal base */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .55s cubic-bezier(.4,0,.2,1),transform .55s cubic-bezier(.4,0,.2,1)}
+.reveal-left.in{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(30px);transition:opacity .55s cubic-bezier(.4,0,.2,1),transform .55s cubic-bezier(.4,0,.2,1)}
+.reveal-right.in{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(.96);transition:opacity .5s ease,transform .5s cubic-bezier(.34,1.4,.64,1)}
+.reveal-scale.in{opacity:1;transform:scale(1)}
+/* Stagger delays */
+.delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}
+.delay-4{transition-delay:.32s}.delay-5{transition-delay:.40s}.delay-6{transition-delay:.48s}
+
+/* Product card entrance — starts visible, lifts in smoothly */
+.reveal-card{opacity:1;transform:translateY(18px);transition:opacity .5s ease,transform .5s cubic-bezier(.34,1.1,.64,1)}
+.reveal-card.in{opacity:1;transform:translateY(0)}
+
+/* Hero animations */
+@keyframes heroFadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroLine{from{width:0}to{width:60px}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(220,50,50,.4)}70%{box-shadow:0 0 0 6px rgba(220,50,50,0)}}
+@keyframes countUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes dotBlink{0%,80%,100%{opacity:0}40%{opacity:1}}
+
+/* SALE badge pulse */
+.pbadge{animation:badgePulse 2s infinite}
+
+/* Hover: card image scale */
+.pcard .pcimg{overflow:hidden}
+.pcard .main-img{transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.pcard:hover .main-img{transform:scale(1.055)}
+
+/* No ripple — overflow:hidden kept for safe icon clipping only */
+
+/* Feature icon float on hover */
+.feat-ico-item:hover img{animation:float 1.6s ease-in-out infinite}
+
+/* Shimmering price text */
+.p-now{background:linear-gradient(90deg,var(--black) 25%,#555 50%,var(--black) 75%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 2.5s linear infinite}
+
+/* Stats counter */
+.stat-num{display:inline-block;font-variant-numeric:tabular-nums}
+
+/* Marquee trust bar */
+.marquee-wrap{overflow:hidden;white-space:nowrap}
+.marquee-inner{display:inline-flex;gap:40px;animation:marqueeScroll 18s linear infinite}
+.marquee-inner:hover{animation-play-state:paused}
+
+/* ── COOKIE ── */
+.cookie{position:fixed;bottom:0;left:0;right:0;background:#0d0d0d;color:#fff;z-index:9999;box-shadow:0 -3px 20px rgba(0,0,0,.4);animation:su .3s ease}
+@keyframes su{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.ck-in{max-width:1280px;margin:0 auto;padding:16px 20px;display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap}
+.ck-t{flex:1;min-width:220px}
+.ck-t strong{display:block;margin-bottom:4px;font-size:.88rem;font-weight:600}
+.ck-t p{font-size:.76rem;color:rgba(255,255,255,.6);line-height:1.55;font-weight:300}
+.ck-t a{color:var(--gold);text-decoration:underline}
+.ck-btns{display:flex;gap:7px;flex-shrink:0;flex-wrap:wrap;align-items:center}
+.ck-y{background:#fff;color:var(--black);border:2px solid #fff;padding:8px 18px;border-radius:var(--r);font-size:.8rem;font-weight:600;cursor:pointer;text-transform:uppercase;transition:all .2s;font-family:inherit}
+.ck-y:hover{background:var(--gold);border-color:var(--gold)}
+.ck-n{background:transparent;color:rgba(255,255,255,.55);border:2px solid rgba(255,255,255,.22);padding:8px 18px;border-radius:var(--r);font-size:.8rem;font-weight:600;cursor:pointer;text-transform:uppercase;transition:all .2s;font-family:inherit}
+.ck-n:hover{border-color:rgba(255,255,255,.55);color:#fff}
+
+/* ── NL MODAL ── */
+.nl-ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(8px)}
+.nl-ov.open{opacity:1;pointer-events:all}
+.nl-m{background:#fff;border-radius:var(--rl);padding:48px 40px;text-align:center;max-width:380px;width:90%;box-shadow:var(--shadow-lg);transform:scale(.92);transition:transform .3s}
+.nl-ov.open .nl-m{transform:scale(1)}
+.nl-m-ico{width:64px;height:64px;background:#f0fff4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.nl-m h2{font-size:1.3rem;font-weight:600;margin-bottom:8px}
+.nl-m p{font-size:.86rem;color:var(--gray);margin-bottom:20px;line-height:1.65;font-weight:300}
+.nl-m button{background:var(--black);color:#fff;border:none;padding:10px 28px;border-radius:var(--r);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;font-family:inherit}
+
+/* ── MOBILE MENU ── */
+.mmenu{position:fixed;inset:0;background:#fff;z-index:800;transform:translateX(-100%);transition:transform .3s;overflow-y:auto}
+.mmenu.open{transform:translateX(0)}
+.mm-head{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--lgray)}
+.mm-x{background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--gray);font-family:inherit}
+.mm-links{padding:16px 20px}
+.mm-links a{display:block;padding:13px 0;font-size:.95rem;font-weight:500;text-transform:uppercase;letter-spacing:.3px;color:var(--dark);border-bottom:1px solid var(--lgray)}
+.mm-leg{padding:0 20px 28px}
+.mm-leg h4{font-size:.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:10px;margin-top:18px}
+.mm-leg a{display:block;padding:7px 0;font-size:.83rem;color:var(--dgray);border-bottom:1px solid var(--lgray)}
+
+/* ── STATS ── */
+.stats{background:var(--black);color:#fff;padding:52px 0}
+.stats-in{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+.sn{font-size:2.6rem;font-weight:600;color:var(--gold);display:block}
+.sl{font-size:.8rem;color:rgba(255,255,255,.6);margin-top:4px;font-weight:300}
+.ss{font-size:.68rem;color:rgba(255,255,255,.35);margin-top:2px}
+
+/* ── ÜBER UNS icons ── */
+.feats-icons{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.feat-ico-item{text-align:center;padding:22px 12px}
+.feat-ico-item img{width:90px;height:90px;object-fit:contain;margin:0 auto 14px;opacity:.85}
+.feat-ico-item strong{display:block;font-size:.85rem;font-weight:500;margin-bottom:4px}
+.feat-ico-item span{font-size:.76rem;color:var(--gray);font-weight:300;line-height:1.4}
+
+/* ── FOOTER ── */
+.footer{background:#0d0d0d;color:rgba(255,255,255,.8)}
+.ftop{padding:52px 0 40px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.fdesc{font-size:.8rem;color:rgba(255,255,255,.42);line-height:1.7;margin-bottom:18px;font-weight:300}
+.fcol h4{font-size:.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:13px}
+.flinks{display:flex;flex-direction:column;gap:7px}
+.flinks a{font-size:.81rem;color:rgba(255,255,255,.55);transition:color .2s;font-weight:300}
+.flinks a:hover{color:#fff}
+.nl-form{display:flex;gap:6px;margin-top:8px}
+.nl-inp{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;padding:9px 11px;border-radius:var(--r);font-size:.81rem;outline:none;min-width:0;font-family:inherit}
+.nl-inp::placeholder{color:rgba(255,255,255,.28)}
+.nl-inp:focus{border-color:rgba(255,255,255,.36)}
+.nl-sbtn{background:#fff;color:var(--black);border:none;padding:9px 13px;border-radius:var(--r);font-size:.76rem;font-weight:600;text-transform:uppercase;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:inherit}
+.nl-sbtn:hover{background:var(--gold)}
+.fbottom{border-top:1px solid rgba(255,255,255,.07);padding:16px 0}
+.fbm{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:9px}
+.fc{font-size:.73rem;color:rgba(255,255,255,.28);font-weight:300}
+.fll{display:flex;gap:16px;flex-wrap:wrap}
+.fll a{font-size:.73rem;color:rgba(255,255,255,.3);transition:color .2s;font-weight:300}
+.fll a:hover{color:rgba(255,255,255,.8)}
+
+/* Toast */
+.toast{position:fixed;top:calc(var(--hh) + 10px);right:16px;background:var(--black);color:#fff;padding:11px 16px;border-radius:var(--r);font-size:.8rem;font-weight:500;z-index:9990;box-shadow:var(--shadow-lg);transform:translateX(140%);transition:transform .3s;display:flex;align-items:center;gap:7px;max-width:280px}
+.toast.show{transform:translateX(0)}
+.toast.ok{background:var(--ok)}
+.toast.err{background:var(--sale)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .fgrid{grid-template-columns:1fr 1fr}
+  .min{grid-template-columns:1fr}
+  .mgal{position:relative;height:55vw;max-height:460px}
+}
+@media(max-width:768px){
+  nav.mainnav{display:none}
+  .hmbtn{display:flex}
+  .pgrid{grid-template-columns:repeat(2,1fr);gap:11px}
+  .fbar-in{grid-template-columns:1fr 1fr}
+  .stats-in{grid-template-columns:1fr;gap:18px}
+  .fgrid{grid-template-columns:1fr}
+  .feats-icons{grid-template-columns:repeat(3,1fr)}
+  .co-modal,.modal{width:100vw}
+  .minfo{padding:26px 16px 60px}
+  .hero{min-height:68vh}
+  .fpay-row{flex-wrap:wrap}
+  .co-page{grid-template-columns:1fr;gap:20px;padding:16px 12px 80px}
+  .co-right{position:static;order:-1}
+  .co-left{padding:20px 16px}
+  .shoppay-inner{margin:40px 16px;padding:28px 20px}
+}
+@media(max-width:480px){
+  :root{--hh:60px}
+  .logo-name{font-size:1.2rem!important}
+  .pgrid{grid-template-columns:repeat(2,1fr);gap:9px}
+  .fbar-in{grid-template-columns:1fr}
+  .hero h1{font-size:1.7rem}
+  .hbtns{flex-direction:column}
+  .hbtns .btn{width:100%}
+  .feats-icons{grid-template-columns:repeat(3,1fr);gap:10px}
+  .feat-ico-item{padding:12px 6px}
+  .feat-ico-item img{width:64px;height:64px}
+  .fpay-row{flex-wrap:wrap}
+  .co-nav{flex-direction:column}
+  .frow.half{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- COOKIE -->
+<div class="cookie" id="cookie" style="display:none">
+  <div class="ck-in">
+    <div class="ck-t">
+      <strong data-t="cookie.title">Wir verwenden Cookies</strong>
+      <p data-t="cookie.text">Wir nutzen Cookies, um dir die bestmögliche Erfahrung zu bieten und unsere Website stetig zu verbessern. Weitere Infos in unserer <a href="#" data-t="cookie.link">Datenschutzerklärung</a>.</p>
+    </div>
+    <div class="ck-btns">
+      <button class="ck-y" onclick="acceptCookie()" data-t="cookie.accept">Alle akzeptieren</button>
+      <button class="ck-n" onclick="declineCookie()" data-t="cookie.decline">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+
+<!-- NL SUCCESS MODAL -->
+<div class="nl-ov" id="nl-ov" onclick="if(event.target===this)closeNl()">
+  <div class="nl-m">
+    <div class="nl-m-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2d8653" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <h2 data-t="nl.thanks">Danke für deine Anmeldung!</h2>
+    <p data-t="nl.msg">Du erhältst in Kürze eine Bestätigungs-E-Mail. Freue dich auf exklusive Deals und 10% Rabatt!</p>
+    <button onclick="closeNl()" data-t="nl.close">Schließen</button>
+  </div>
+</div>
+
+<!-- SIZE GUIDE MODAL -->
+<div class="sg-overlay" id="sg-ov" onclick="if(event.target===this)closeSizeGuide()">
+  <div class="sg-modal">
+    <div class="sg-head">
+      <h2 data-t="sz.title">Größentabelle</h2>
+      <button class="sg-x" onclick="closeSizeGuide()">×</button>
+    </div>
+    <div class="sg-body">
+      <p class="sg-intro" data-t="sz.intro">Damit deine Luméra Leggings ihren vollen Effekt entfalten können, ist die richtige Größe entscheidend. Unsere 3D-Kompression wirkt nur dann optimal, wenn die Leggings genug Raum für Bewegung hat, aber trotzdem eng genug sitzt.</p>
+      <div class="sg-diagram">
+        <img src="icons/groessen-diagramm.png" alt="Größendiagramm" onerror="this.parentElement.style.display='none'">
+      </div>
+      <table class="sg-table">
+        <thead><tr><th data-t="sz.size">Größe</th><th data-t="sz.eu">EU-Größe</th><th data-t="sz.hip">Hüfte (cm)</th><th data-t="sz.waist">Taille (cm)</th><th data-t="sz.length">Länge (cm)</th></tr></thead>
+        <tbody>
+          <tr><td>XS</td><td>32–34</td><td>79–85</td><td>54–60</td><td>78</td></tr>
+          <tr><td>S</td><td>34–36</td><td>85–95</td><td>60–70</td><td>80</td></tr>
+          <tr><td>M</td><td>38–40</td><td>95–105</td><td>70–80</td><td>82</td></tr>
+          <tr><td>L</td><td>42–44</td><td>105–115</td><td>80–90</td><td>84</td></tr>
+          <tr><td>XL</td><td>44–46</td><td>115–125</td><td>90–100</td><td>85</td></tr>
+          <tr><td>2XL</td><td>48–50</td><td>126–135</td><td>100–110</td><td>87</td></tr>
+        </tbody>
+      </table>
+      <div class="sg-tip">
+        <strong data-t="sz.how">Wie du Taille und Hüfte richtig misst:</strong>
+        Stehe gerade mit den Füßen zusammen. Verwende ein Maßband für die genauesten Ergebnisse.
+        <strong data-t="sz.waist_h">Taille:</strong>
+        <span data-t="sz.waist_txt">Miss deine Taille an der schmalsten Stelle des Oberkörpers, ungefähr auf Höhe des Bauchnabels. Das Maßband sollte eng anliegen, aber nicht einschneiden.</span>
+        <strong data-t="sz.hip_h">Hüfte:</strong>
+        <span data-t="sz.hip_txt">Miss deine Hüfte an der breitesten Stelle über Po und Unterbauch. Stelle die Füße locker hüftbreit hin und achte darauf, dass das Maßband waagerecht verläuft.</span>
+        <br><br>
+        <em data-t="sz.note">Liegt deine Messung zwischen zwei Größen? Dann wähle bitte die größere Größe – für maximalen Komfort.</em>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mmenu" id="mmenu">
+  <div class="mm-head">
+    <img src="lumera-black.png" alt="Luméra" class="logo-img-brand" style="height:48px">
+    <button class="mm-x" onclick="closeMenu()">×</button>
+  </div>
+  <div class="mm-links">
+    <a href="#" data-t="nav.home">Startseite</a>
+    <a href="#leggings" data-t="nav.collection">Kompressionsleggings</a>
+    <a href="#ueber" data-t="nav.about">Über uns</a>
+    <a href="#faq" data-t="nav.faq">FAQ</a>
+    <a href="#kontakt" data-t="nav.contact">Hilfe &amp; Kontakt</a>
+  </div>
+  <div class="mm-leg">
+    <h4>Rechtliches</h4>
+    <a href="#">Impressum</a><a href="#">Datenschutzerklärung</a>
+    <a href="#">AGB &amp; Widerruf</a><a href="#">Versandinformationen</a>
+  </div>
+</div>
+
+<!-- CART OVERLAY -->
+<div class="c-ov" id="c-ov" onclick="closeCart()"></div>
+
+<!-- CART DRAWER -->
+<div class="cdraw" id="cdraw">
+  <div class="ch">
+    <div class="ch-left">
+      <h3 data-t="cart.title">Warenkorb</h3>
+      <span class="ch-cnt" id="ch-cnt">0</span>
+    </div>
+    <button class="cx" onclick="closeCart()">×</button>
+  </div>
+  <div class="free-ship-banner" id="fs-banner">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+    <span data-t="cart.freeship">Du hast kostenlosen Versand freigeschaltet!</span>
+  </div>
+  <div class="cb" id="cb">
+    <div class="ce"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><p style="margin-top:11px;font-size:.88rem;color:var(--gray)" data-t="cart.empty">Dein Warenkorb ist leer</p></div>
+  </div>
+  <div class="cf" id="cf" style="display:none">
+    <div class="cf-sub"><span data-t="cart.subtotal">Zwischensumme</span><span id="ctot">0,00 €</span></div>
+    <p class="cf-tax" data-t="cart.tax">inkl. 19% MwSt. · Versand: <strong style="color:var(--ok)">Kostenlos</strong></p>
+    <button class="atc-btn" onclick="openCheckout()" data-t="cart.checkout">ZUR KASSE →</button>
+    <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin:8px 0 2px;font-size:.72rem;color:var(--gray)">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#96bf48" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span>Sichere Zahlung über <strong style="color:#5a8e00">Shopify Payments</strong></span>
+    </div>
+    <button class="btn btn-outline btn-full" style="font-size:.82rem" onclick="closeCart()" data-t="cart.continue">WEITER EINKAUFEN</button>
+  </div>
+</div>
+
+<!-- CHECKOUT FULL PAGE -->
+<div class="co-overlay" id="co-ov" style="display:none"></div>
+<div class="co-modal" id="co-modal">
+  <div class="co-brand-header">
+    <img src="lumera-white.png" alt="Luméra">
+  </div>
+  <button class="co-top-close" onclick="closeCheckout()">×</button>
+  <div class="co-page" id="co-page-wrap">
+    <!-- LEFT: form -->
+    <div class="co-left">
+      <!-- Logo bar -->
+      <div class="co-logo-bar">
+        <img src="lumera-black.png" alt="Luméra" class="logo-img-brand" style="height:48px;margin:0 auto">
+      </div>
+
+      <!-- Main form (single scroll) -->
+      <div id="co-form">
+        <!-- Express checkout -->
+        <p style="font-size:.7rem;text-align:center;color:var(--gray);margin-bottom:10px;letter-spacing:.8px;text-transform:uppercase">Express Checkout</p>
+        <div class="co-express">
+          <button type="button" class="co-express-btn co-express-shop" onclick="openShopPay()">
+            <img src="payment_logos/shop-pay.png" alt="Shop Pay" style="height:22px">
+          </button>
+          <button type="button" class="co-express-btn co-express-paypal" onclick="expressPaypal()">
+            <img src="payment_logos/paypal.png" alt="PayPal" style="height:20px">
+          </button>
+        </div>
+        <div class="co-divider">ODER</div>
+
+        <!-- Kontakt -->
+        <div class="co-section">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+            <h3 style="margin-bottom:0;border-bottom:none;padding-bottom:0">Kontakt</h3>
+            <a href="#" style="font-size:.75rem;color:#5A31F4">Anmelden</a>
+          </div>
+          <div class="frow">
+            <input id="co-email" type="email" placeholder="E-Mail" autocomplete="email" style="font-size:.9rem">
+            <div class="field-err" id="err-email">Bitte gültige E-Mail-Adresse eingeben</div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:.78rem;color:var(--dgray);margin-top:-4px;margin-bottom:6px">
+            <input type="checkbox" id="co-nl" style="margin-top:3px;width:14px;height:14px;accent-color:var(--black);flex-shrink:0">
+            <label for="co-nl">Melde dich zum Newsletter an, um 10% auf deine nächste Bestellung zu sparen.</label>
+          </div>
+        </div>
+
+        <!-- Lieferung -->
+        <div class="co-section">
+          <h3>Lieferung</h3>
+          <div class="frow">
+            <select id="co-country" onchange="onCountryChange()" style="font-size:.88rem">
+              <option value="">Land / Region</option>
+            </select>
+          </div>
+          <div class="frow half">
+            <div>
+              <input id="co-fname" type="text" placeholder="Vorname" autocomplete="given-name">
+              <div class="field-err" id="err-fname">Bitte Vorname eingeben</div>
+            </div>
+            <div>
+              <input id="co-lname" type="text" placeholder="Nachname" autocomplete="family-name">
+              <div class="field-err" id="err-lname">Bitte Nachname eingeben</div>
+            </div>
+          </div>
+          <div class="frow">
+            <input id="co-street-manual" type="text" placeholder="Straße, Hausnummer / Packstation" autocomplete="address-line1">
+          </div>
+          <div class="frow">
+            <input id="co-firm" type="text" placeholder="Firma (optional) / Postnummer (erforderlich)">
+          </div>
+          <div class="frow half">
+            <div><input id="co-zip" type="text" placeholder="Postleitzahl" autocomplete="postal-code"></div>
+            <div><input id="co-city" type="text" placeholder="Stadt" autocomplete="address-level2"></div>
+          </div>
+          <div class="frow">
+            <div class="phone-row">
+              <select id="co-phone-code" aria-label="Ländervorwahl" style="font-size:.82rem"></select>
+              <input id="co-phone" type="tel" placeholder="Telefon (optional)" autocomplete="tel-national">
+            </div>
+          </div>
+        </div>
+
+        <!-- Zahlung -->
+        <div class="co-section">
+          <h3>Zahlung</h3>
+          <p style="font-size:.76rem;color:var(--gray);margin-bottom:14px;margin-top:-8px">Alle Transaktionen sind sicher und verschlüsselt.</p>
+          <div class="co-pay-options">
+            <div class="co-pay-opt selected" id="pay-opt-paypal" onclick="selectPay('paypal')">
+              <div class="co-pay-opt-left"><input type="radio" name="paymethod" value="paypal" checked><span class="co-pay-opt-label">PayPal</span></div>
+              <div class="co-pay-logos"><img src="payment_logos/paypal.png" alt="PayPal"></div>
+            </div>
+            <div id="paypal-info" style="background:var(--ultra);border:1px solid var(--lgray);border-top:none;border-radius:0 0 var(--r) var(--r);padding:10px 14px;font-size:.8rem;color:var(--dgray);margin-bottom:2px">
+              Du wirst zu PayPal weitergeleitet, um deinen Kauf abzuschließen.
+            </div>
+            <div class="co-pay-opt" id="pay-opt-shoppay" onclick="selectPay('shoppay')">
+              <div class="co-pay-opt-left"><input type="radio" name="paymethod" value="shoppay"><span class="co-pay-opt-label">Shop Pay</span></div>
+              <div class="co-pay-logos"><img src="payment_logos/shop-pay.png" alt="Shop Pay"></div>
+            </div>
+            <div class="co-pay-opt" id="pay-opt-card" onclick="selectPay('card')">
+              <div class="co-pay-opt-left"><input type="radio" name="paymethod" value="card"><span class="co-pay-opt-label">Kreditkarte</span></div>
+              <div class="co-pay-logos">
+                <img src="payment_logos/visa.png" alt="Visa" style="height:18px">
+                <img src="payment_logos/mastercard.png" alt="MC" style="height:18px">
+              </div>
+            </div>
+            <div id="card-fields" style="display:none;background:var(--ultra);border:1px solid var(--lgray);border-top:none;border-radius:0 0 var(--r) var(--r);padding:14px;margin-bottom:2px">
+              <input type="text" placeholder="Kartennummer" style="width:100%;padding:10px 12px;border:1.5px solid var(--lgray);border-radius:var(--r);font-family:inherit;font-size:.86rem;outline:none;margin-bottom:8px">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+                <input type="text" placeholder="Gültig bis (MM/JJ)" style="width:100%;padding:10px 12px;border:1.5px solid var(--lgray);border-radius:var(--r);font-family:inherit;font-size:.86rem;outline:none">
+                <input type="text" placeholder="Sicherheitscode" style="width:100%;padding:10px 12px;border:1.5px solid var(--lgray);border-radius:var(--r);font-family:inherit;font-size:.86rem;outline:none">
+              </div>
+              <input type="text" placeholder="Name des Karteninhabers" style="width:100%;padding:10px 12px;border:1.5px solid var(--lgray);border-radius:var(--r);font-family:inherit;font-size:.86rem;outline:none">
+            </div>
+          </div>
+        </div>
+
+        <!-- Rechnungsadresse -->
+        <div class="co-section">
+          <h3>Rechnungsadresse</h3>
+          <div class="co-pay-opt selected" id="bill-same" onclick="setBilling('same')" style="margin-bottom:4px">
+            <div class="co-pay-opt-left"><input type="radio" name="billing" value="same" checked><span class="co-pay-opt-label" style="font-size:.84rem">Mit der Lieferadresse identisch</span></div>
+          </div>
+          <div class="co-pay-opt" id="bill-diff" onclick="setBilling('diff')">
+            <div class="co-pay-opt-left"><input type="radio" name="billing" value="diff"><span class="co-pay-opt-label" style="font-size:.84rem">Eine andere Rechnungsadresse verwenden</span></div>
+          </div>
+          <div id="billing-fields" style="display:none;background:var(--ultra);border:1px solid var(--lgray);border-top:none;border-radius:0 0 var(--r) var(--r);padding:14px">
+            <select style="width:100%;padding:10px 12px;border:1.5px solid var(--lgray);border-radius:var(--r);font-family:inherit;font-size:.86rem;outline:none;margin-bottom:8px"><option>Deutschland</option></select>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+              <input type="text" placeholder="Vorname" style="width:100%;padding:10px 12px;border:1.5px solid var(--lgray);border-radius:var(--r);font-family:inherit;font-size:.86rem;outline:none">
+              <input type="text" placeholder="Nachname" style="width:100%;padding:10px 12px;border:1.5px solid var(--lgray);border-radius:var(--r);font-family:inherit;font-size:.86rem;outline:none">
+            </div>
+            <input type="text" placeholder="Straße, Hausnummer / Packstation" style="width:100%;padding:10px 12px;border:1.5px solid var(--lgray);border-radius:var(--r);font-family:inherit;font-size:.86rem;outline:none;margin-bottom:8px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <input type="text" placeholder="Postleitzahl" style="width:100%;padding:10px 12px;border:1.5px solid var(--lgray);border-radius:var(--r);font-family:inherit;font-size:.86rem;outline:none">
+              <input type="text" placeholder="Stadt" style="width:100%;padding:10px 12px;border:1.5px solid var(--lgray);border-radius:var(--r);font-family:inherit;font-size:.86rem;outline:none">
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:.72rem;color:var(--gray);margin-bottom:14px;line-height:1.6">
+          Meine Daten zum schnelleren Bezahlen speichern · Mit der Zahlung stimmst du der Erstellung eines Shop-Kontos gemäß den <a href="#" style="color:#5A31F4;text-decoration:underline">Bedingungen</a> und der <a href="#" style="color:#5A31F4;text-decoration:underline">Datenschutzerklärung</a> zu.
+          <span style="float:right;cursor:pointer;color:#5A31F4;text-decoration:underline" onclick="closeCheckout()">Nicht jetzt</span>
+        </p>
+
+        <button class="btn btn-full btn-lg" id="co-pay-btn" onclick="submitOrder()" style="background:#5A31F4;border-color:#5A31F4;color:#fff;font-size:.92rem;margin-bottom:10px">Jetzt kaufen</button>
+
+        <div style="display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--lgray)">
+          <a href="#" style="font-size:.7rem;color:var(--gray)">Widerrufsrecht</a>
+          <a href="#" style="font-size:.7rem;color:var(--gray)">Versand</a>
+          <a href="#" style="font-size:.7rem;color:var(--gray)">Datenschutzerklärung</a>
+          <a href="#" style="font-size:.7rem;color:var(--gray)">AGB</a>
+          <a href="#" style="font-size:.7rem;color:var(--gray)">Impressum</a>
+        </div>
+      </div>
+
+      <!-- Success screen -->
+      <div id="co-success" style="display:none;text-align:center;padding:64px 20px">
+        <div style="width:64px;height:64px;background:#f0fff4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2d8653" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2 style="margin-bottom:10px">Bestellung erfolgreich!</h2>
+        <p style="color:var(--gray);margin-bottom:24px">Vielen Dank! Du erhältst in Kürze eine Bestätigungs-E-Mail.</p>
+        <button class="btn btn-dark" onclick="closeCheckout()">Schließen</button>
+      </div>
+    </div>
+
+    <!-- RIGHT: order summary -->
+    <div class="co-right" id="co-right-panel">
+      <h3>DEINE BESTELLUNG</h3>
+      <div id="co-items-list"></div>
+      <div class="co-right-totals">
+        <div class="co-right-row"><span>Zwischensumme</span><span id="co-sub">–</span></div>
+        <div class="co-right-row"><span>Versand</span><span style="color:var(--ok)">Kostenlos</span></div>
+        <div class="co-right-row total"><span>Gesamt</span><span id="co-gtot">–</span></div>
+        <div style="font-size:.7rem;color:var(--gray);text-align:right;margin-top:4px">inkl. MwSt.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SHOP PAY PAGE -->
+<div class="shoppay-page" id="shoppay-page">
+  <div class="shoppay-brand-header">
+    <img src="lumera-white.png" alt="Luméra">
+  </div>
+  <div class="shoppay-inner">
+    <div class="shoppay-logo">
+      <img src="payment_logos/shop-pay.png" alt="Shop Pay" style="height:40px">
+    </div>
+    <h2 class="shoppay-title">Anmelden</h2>
+    <p class="shoppay-sub">Oder ein Konto erstellen</p>
+    <input type="email" class="shoppay-field" id="sp-email" placeholder="Deine E-Mail-Adresse eingeben" autocomplete="email">
+    <button type="button" class="shoppay-btn-main" onclick="shopPayContinue()">
+      <img src="payment_logos/shop-pay.png" alt="" style="height:18px;filter:brightness(0) invert(1)">
+      Mit shop fortfahren
+    </button>
+    <button type="button" class="shoppay-btn-passkey" onclick="shopPayPasskey()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Passkey verwenden
+    </button>
+    <button class="shoppay-back" onclick="closeShopPay()">Zurück</button>
+    <p class="shoppay-legal">
+      Indem du fortfährst, stimmst du den <a href="#">allgemeinen Geschäftsbedingungen</a> sowie der <a href="#">Datenschutzerklärung</a> von Shop zu.
+    </p>
+  </div>
+</div>
+
+<!-- PRODUCT PAGE (full screen) -->
+<div class="product-page" id="pmodal">
+  <div class="product-back" onclick="closeModal()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    <span data-t="prod.back">Zurück zur Kollektion</span>
+  </div>
+  <div class="min">
+    <div class="mgal">
+      <img class="mgal-main" id="mgal-main" src="" alt="" style="transition:opacity .3s">
+    </div>
+    <div class="minfo">
+      <div class="mbc" data-t="prod.bc">Startseite / Kompressionsleggings</div>
+      <h1 class="mtitle" id="mtitle"></h1>
+      <div class="mrev"><span class="stars">★★★★★</span><span>4.8 / 5 &nbsp;|&nbsp; 12.000+ zufriedene Kundinnen</span></div>
+      <div class="mret"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg><span data-t="prod.returns">100 Tage Rückgaberecht – ohne Risiko bestellen</span></div>
+      <div class="mpr">
+        <span class="po">59,99 €</span>
+        <span class="pn">39,99 €</span>
+        <span class="ps" data-t="prod.save">Spare 20,00 €</span>
+        <p class="pt" data-t="prod.vat">inkl. 19% MwSt. zzgl. Versandkosten</p>
+      </div>
+      <div class="mdel"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span data-t="prod.delivery">Artikel verfügbar · Lieferzeit: 5–10 Werktage</span></div>
+      <ul class="mfeats">
+        <li data-t="f1">Reduziert Cellulite sichtbar</li>
+        <li data-t="f2">Wirkt aktiv gegen Wassereinlagerungen</li>
+        <li data-t="f3">Aktiviert müde &amp; schwere Beine</li>
+        <li data-t="f4">Betont die Silhouette natürlich</li>
+        <li data-t="f5">Selbstbewusstseins-Boost garantiert</li>
+      </ul>
+      <!-- COLOR SELECTION (side only) -->
+      <div class="opt">
+        <div class="olabel"><span data-t="prod.color">Farbe:</span> <b id="sc-label">–</b></div>
+        <div class="ct-grid" id="mcsw"></div>
+      </div>
+      <!-- SIZE SELECTION -->
+      <div class="opt">
+        <div class="opt-hdr">
+          <div class="olabel"><span data-t="prod.size">Größe:</span> <b id="ss-label">S</b></div>
+          <button type="button" class="szguide-link" onclick="openSizeGuide()">
+            <img src="icons/ruler.png" alt="" style="width:16px;height:16px;object-fit:contain;opacity:.6">
+            <span data-t="prod.sizeguide">Größentabelle</span>
+          </button>
+        </div>
+        <div class="szbtns" id="mszbtns">
+          <button class="szb" onclick="selSz(this,'XS')">XS</button>
+          <button class="szb active" onclick="selSz(this,'S')">S</button>
+          <button class="szb" onclick="selSz(this,'M')">M</button>
+          <button class="szb" onclick="selSz(this,'L')">L</button>
+          <button class="szb" onclick="selSz(this,'XL')">XL</button>
+        </div>
+      </div>
+      <!-- QTY -->
+      <div class="qrow">
+        <span class="qlabel" data-t="prod.qty">Menge</span>
+        <div class="qctrl">
+          <button onclick="chQ(-1)">−</button>
+          <input type="number" id="mq" value="1" min="1" max="99">
+          <button onclick="chQ(1)">+</button>
+        </div>
+      </div>
+      <button class="atc-btn" id="matcbtn" onclick="addFromModal()" data-t="prod.atc">IN DEN WARENKORB LEGEN</button>
+      <!-- PAYMENT BADGES -->
+      <div class="pay-badges">
+        <div class="pay-badge" title="Shop Pay"><img src="payment_logos/shop-pay.png" alt="Shop Pay"></div>
+        <div class="pay-badge" title="PayPal"><img src="payment_logos/paypal.png" alt="PayPal"></div>
+        <div class="pay-badge" title="Visa"><img src="payment_logos/visa.png" alt="Visa"></div>
+        <div class="pay-badge" title="Mastercard"><img src="payment_logos/mastercard.png" alt="Mastercard"></div>
+      </div>
+      <!-- TRUST LIST -->
+      <div class="trust-list">
+        <div class="tl-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span data-t="trust.dhl">Kostenloser DHL Versand</span></div>
+        <div class="tl-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span data-t="trust.guarantee">100% Zufriedenheitsgarantie</span></div>
+        <div class="tl-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg><span data-t="trust.return">Einfacher Umtausch &amp; Rücksendungen</span></div>
+        <div class="tl-item"><img src="icons/deutschland.png" style="width:14px;height:14px;object-fit:contain;opacity:.7" alt=""><span data-t="trust.de">Versand aus Deutschland</span></div>
+      </div>
+      <!-- PRODUCT DESCRIPTION -->
+      <div class="prod-desc">
+        <p class="pd-title">SKIN BOOST LEGGINGS – Für eine schmeichelhafte Silhouette und ein selbstbewusstes Tragegefühl</p>
+        <p>Du suchst Leggings, die nicht nur gut aussehen, sondern auch deine Figur optimal in Szene setzen? Die SKIN BOOST Leggings wurden entwickelt, um deine natürlichen Konturen zu betonen und dir bei jeder Bewegung ein angenehmes, sicheres Gefühl zu geben.</p>
+        <p>Das strukturierte, elastische Material schmiegt sich sanft an den Körper an und kann die Haut optisch glatter erscheinen lassen. Der hohe Bund sorgt für einen bequemen Sitz, während die figurbetonte Passform deine Silhouette stilvoll unterstreicht – ganz gleich, ob beim Workout, beim Spaziergang oder im Alltag.</p>
+        <p class="pd-sub">Warum du sie lieben wirst</p>
+        <ul class="pd-list">
+          <li>✔ <strong>Optisch glatteres Hautbild</strong> – Die spezielle Textur kann Unebenheiten dezent kaschieren und die Haut ebenmäßiger wirken lassen.</li>
+          <li>✔ <strong>Figurbetonende Passform</strong> – Betont deine Kurven auf natürliche Weise und sorgt für einen modernen Look.</li>
+          <li>✔ <strong>Hoher Tragekomfort</strong> – Weiches, dehnbares Material für maximale Bewegungsfreiheit.</li>
+          <li>✔ <strong>Blickdicht &amp; vielseitig</strong> – Ideal für Fitness, Yoga, Freizeit oder als stylisches Everyday-Essential.</li>
+          <li>✔ <strong>Selbstbewusst auftreten</strong> – Fühle dich rundum wohl und genieße einen Look, der deine Vorzüge hervorhebt.</li>
+        </ul>
+        <p>Die SKIN BOOST Leggings vereinen Komfort, Stil und eine schmeichelhafte Passform in einem Design. Ein Must-have für alle, die sich jeden Tag stark, feminin und selbstbewusst fühlen möchten.</p>
+      </div>
+      <!-- ACCORDION -->
+      <div class="acc">
+        <div class="aci"><button class="acb" onclick="tAcc(this)" data-t="acc.unique">Was macht die Luméra Leggings einzigartig?</button><div class="acbd"><p>Die Luméra Kompressionsleggings vereint medizinisch inspirierte Kompression, eingebaute Widerstandszonen und unsere exklusive 3D-Technologie. Sie fördert die Durchblutung, reduziert Cellulite und aktiviert müde Beine – ganz nebenbei im Alltag.</p></div></div>
+        <div class="aci"><button class="acb" onclick="tAcc(this)" data-t="acc.material">Material &amp; Pflege</button><div class="acbd"><p>Material: 90% Polyamid, 10% Spandex</p><ul><li>Maschinenwäsche max. 40°C (Schongang)</li><li>Nicht bleichen · Nicht bügeln · Nicht trocknen</li></ul></div></div>
+        <div class="aci"><button class="acb" onclick="tAcc(this)" data-t="acc.delivery">Lieferung &amp; Rückgabe</button><div class="acbd"><p><strong>Lieferung:</strong> Kostenloser DHL Versand · 5–10 Werktage</p><p><strong>Rückgabe:</strong> 100 Tage Rückgaberecht. Kostenlose Rücksendung.</p></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span id="tmsg"></span></div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="hinner container">
+    <button class="icon-btn hmbtn" onclick="openMenu()">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <a class="logo-wrap" href="javascript:window.scrollTo(0,0)">
+      <img src="lumera-black.png" alt="Luméra" class="logo-img-brand">
+    </a>
+    <nav class="mainnav">
+      <a href="#" data-t="nav.home">Startseite</a>
+      <a href="#leggings" data-t="nav.collection">Kollektion</a>
+      <a href="#ueber" data-t="nav.about">Über uns</a>
+      <a href="#faq" data-t="nav.faq">FAQ</a>
+      <a href="#kontakt" data-t="nav.contact">Kontakt</a>
+    </nav>
+    <div class="hright">
+      <div class="lang-sw">
+        <button class="lang-btn active" id="lde" onclick="setLang('de')">DE</button>
+        <button class="lang-btn" id="len" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="icon-btn" onclick="toggleSearch()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="icon-btn" onclick="openCart()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-cnt" id="cbadge" style="display:none">0</span>
+      </button>
+    </div>
+  </div>
+  <div class="search-bar" id="sbar">
+    <div class="container"><div class="sfm">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input class="sinput" id="sinput" type="text" data-t-ph="search.ph" placeholder="Produkt suchen..." oninput="filterP(this.value)">
+      <button style="background:none;border:none;cursor:pointer;font-size:1.2rem;color:#aaa" onclick="toggleSearch()">×</button>
+    </div></div>
+  </div>
+</header>
+
+<div id="landing-main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" id="hero-bg"><img src="product_images/%E4%B8%BB%E5%9B%BE/%E4%B8%BB%E5%9B%BE-2.jpg" alt="LUMÉRA" onerror="this.style.display='none'"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c container">
+    <div class="hero-tag" data-t="hero.tag" style="animation:heroFadeUp .6s ease both;animation-delay:.1s">LUMÉRA · 2026 COLLECTION</div>
+    <h1 data-t="hero.h1" style="animation:heroFadeUp .7s ease both;animation-delay:.25s">Die Nr. 1 für<br>dein <em>Wohlgefühl</em></h1>
+    <p data-t="hero.p" style="animation:heroFadeUp .7s ease both;animation-delay:.4s">Glattere Haut, bessere Durchblutung &amp; mehr Leichtigkeit im Alltag – für ein starkes Körpergefühl in jedem Alter.</p>
+    <div class="hbtns" style="animation:heroFadeUp .7s ease both;animation-delay:.55s">
+      <a href="#leggings" class="btn btn-gold btn-lg" data-t="hero.btn1">Jetzt entdecken</a>
+      <a href="#ueber" class="btn btn-lg" style="border:1.5px solid rgba(255,255,255,.45);color:#fff;background:transparent" data-t="hero.btn2">Mehr erfahren</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES BAR -->
+<div class="fbar">
+  <div class="container"><div class="fbar-in">
+    <div class="fi reveal delay-1"><div class="fi-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div><strong data-t="fb1.h">Kostenloser Versand</strong><span data-t="fb1.s">Für alle Bestellungen</span></div></div>
+    <div class="fi reveal delay-2"><div class="fi-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div><div><strong data-t="fb2.h">100 Tage Rückgabe</strong><span data-t="fb2.s">Risikolos bestellen</span></div></div>
+    <div class="fi reveal delay-3"><div class="fi-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><strong data-t="fb3.h">Kostenloser Umtausch</strong><span data-t="fb3.s">Falsche Größe? Kein Problem</span></div></div>
+    <div class="fi reveal delay-4"><div class="fi-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><div><strong data-t="fb4.h">Klarna verfügbar</strong><span data-t="fb4.s">Jetzt kaufen, später zahlen</span></div></div>
+  </div></div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="sec" id="leggings">
+  <div class="container">
+    <div class="sh reveal"><h2 data-t="prod.section">LUMÉRA Collection</h2><a href="#" data-t="prod.all">Alle anzeigen →</a></div>
+    <div class="nores" id="nores" data-t="search.empty">Keine Produkte gefunden.</div>
+    <div class="pgrid" id="pgrid"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container"><div class="stats-in">
+    <div><span class="sn">87%</span><div class="sl" data-t="stat1">sehen nach 2 Monaten weniger Cellulite</div><div class="ss" data-t="stat1s">*Kundenbefragung 2026</div></div>
+    <div><span class="sn">93%</span><div class="sl" data-t="stat2">spüren leichtere Beine nach 2 Wochen</div><div class="ss" data-t="stat2s">*Kundenbefragung 2026</div></div>
+    <div><span class="sn">12.000+</span><div class="sl" data-t="stat3">zufriedene Kundinnen in Deutschland</div><div class="ss">★★★★★ 4.8 / 5</div></div>
+  </div></div>
+</section>
+
+<!-- ÜBER UNS -->
+<section class="sec" id="ueber" style="background:var(--ultra)">
+  <div class="container" style="max-width:840px;text-align:center">
+    <h2 class="reveal" style="font-size:clamp(1.4rem,3.5vw,2.1rem);font-weight:600;letter-spacing:-.3px;margin-bottom:12px" data-t="about.h">Form &amp; Gesundheit in einem</h2>
+    <p class="reveal" style="color:var(--gray);line-height:1.85;font-weight:300;margin-bottom:8px" data-t="about.p">Die Luméra Kompressionsleggings vereint medizinisch inspirierte Kompression, eingebaute Widerstandszonen und unsere exklusive 3D-Technologie. Betont die Silhouette natürlich, fördert die Durchblutung und reduziert das Erscheinungsbild von Cellulite.</p>
+    <div class="feats-icons">
+      <div class="feat-ico-item reveal-scale delay-1"><img src="icons/cellulite.png" alt="Cellulite" onerror="this.style.opacity='0'"><strong data-t="ic1.h">Reduziert Cellulite</strong><span data-t="ic1.s">sichtbar &amp; nachhaltig</span></div>
+      <div class="feat-ico-item reveal-scale delay-2"><img src="icons/wasser.png" alt="Wasser" onerror="this.style.opacity='0'"><strong data-t="ic2.h">Gegen Wassereinlagerungen</strong><span data-t="ic2.s">wirkt aktiv</span></div>
+      <div class="feat-ico-item reveal-scale delay-3"><img src="icons/silhouette.png" alt="Silhouette" onerror="this.style.opacity='0'"><strong data-t="ic3.h">Betont Silhouette</strong><span data-t="ic3.s">natürlich &amp; formend</span></div>
+      <div class="feat-ico-item reveal-scale delay-4"><img src="icons/energie.png" alt="Energie" onerror="this.style.opacity='0'"><strong data-t="ic4.h">Aktiviert Beine</strong><span data-t="ic4.s">müde Beine ade</span></div>
+      <div class="feat-ico-item reveal-scale delay-5"><img src="icons/kalorien.png" alt="Kalorien" onerror="this.style.opacity='0'"><strong data-t="ic5.h">3× mehr Kalorien</strong><span data-t="ic5.s">verbrenne mehr</span></div>
+      <div class="feat-ico-item reveal-scale delay-6"><img src="icons/kompression.png" alt="Kompression" onerror="this.style.opacity='0'"><strong data-t="ic6.h">Aktive Kompression</strong><span data-t="ic6.s">&amp; Support</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="container" style="max-width:720px">
+    <div class="sh reveal"><h2 data-t="faq.h">Häufig gestellte Fragen</h2></div>
+    <div class="acc reveal" style="border-top:1px solid var(--lgray)">
+      <div class="aci"><button class="acb" onclick="tAcc(this)" data-t="faq.q1">Wie lange dauert die Lieferung?</button><div class="acbd"><p data-t="faq.a1">Die Lieferzeit beträgt <strong>5–10 Werktage</strong> nach Zahlungseingang. Du erhältst eine Versandbestätigung mit Tracking-Nummer.</p></div></div>
+      <div class="aci"><button class="acb" onclick="tAcc(this)" data-t="faq.q2">Ist der Versand kostenlos?</button><div class="acbd"><p data-t="faq.a2">Ja! Der Versand ist für dich komplett kostenlos.</p></div></div>
+      <div class="aci"><button class="acb" onclick="tAcc(this)" data-t="faq.q3">Wie lange gilt das Rückgaberecht?</button><div class="acbd"><p data-t="faq.a3">Du hast <strong>100 Tage</strong> Zeit zurückzusenden. Die Rücksendung ist kostenlos. Rückerstattung innerhalb von 14 Tagen.</p></div></div>
+      <div class="aci"><button class="acb" onclick="tAcc(this)" data-t="faq.q4">Welche Zahlungsmethoden akzeptiert ihr?</button><div class="acbd"><p data-t="faq.a4">PayPal, Shop Pay und Visa.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="sec" id="kontakt" style="background:var(--black);color:#fff">
+  <div class="container" style="max-width:600px;text-align:center">
+    <h2 style="font-size:clamp(1.4rem,3.5vw,2rem);font-weight:600;margin-bottom:9px;color:#fff" data-t="nl.h">Exklusive Angebote</h2>
+    <p style="color:rgba(255,255,255,.55);margin-bottom:26px;font-weight:300" data-t="nl.sub">Abonniere den Newsletter und erhalte <strong style="color:var(--gold)">10% Rabatt</strong> auf deine erste Bestellung.</p>
+    <div style="display:flex;gap:9px;max-width:420px;margin:0 auto 14px">
+      <input id="nl-email" class="nl-inp" type="email" data-t-ph="nl.ph" placeholder="deine@email.de" style="flex:1">
+      <button class="nl-sbtn" onclick="submitNl()" data-t="nl.btn">Anmelden</button>
+    </div>
+    <p style="font-size:.71rem;color:rgba(255,255,255,.3);font-weight:300" data-t="nl.legal">Mit der Anmeldung stimmst du unserer <a href="#" style="color:var(--gold);text-decoration:underline">Datenschutzerklärung</a> zu.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="ftop">
+    <div class="container">
+      <div class="fgrid">
+
+        <!-- Col 1: logo + desc + payment icons -->
+        <div>
+          <div style="margin-bottom:14px">
+            <img src="lumera-white.png" alt="Luméra" class="logo-img-brand--white">
+          </div>
+          <p class="fdesc" data-t="footer.desc">Hochwertige Kompressionsleggings für dein Wohlbefinden. Glattere Haut, bessere Durchblutung – für ein starkes Körpergefühl in jedem Alter.</p>
+          <p style="font-size:.68rem;color:rgba(255,255,255,.28);margin-top:10px;font-weight:300" data-t="footer.vat">Alle Preise inkl. 19% MwSt.</p>
+        </div>
+
+        <div class="fcol">
+          <h4 data-t="footer.info">INFORMATIONEN</h4>
+          <ul class="flinks"><li><a href="#" data-t="nav.home">Startseite</a></li><li><a href="#leggings" data-t="nav.collection">Kompressionsleggings</a></li><li><a href="#ueber" data-t="nav.about">Über uns</a></li><li><a href="#faq" data-t="nav.faq">FAQ</a></li><li><a href="#kontakt" data-t="nav.contact">Hilfe &amp; Kontakt</a></li></ul>
+        </div>
+        <div class="fcol">
+          <h4 data-t="footer.legal">RECHTLICHES</h4>
+          <ul class="flinks"><li><a href="#" data-t="footer.shipping">Versandinformationen</a></li><li><a href="#" data-t="footer.revoke">Widerrufsbelehrung</a></li><li><a href="#" data-t="footer.agb">AGB</a></li><li><a href="#" data-t="footer.privacy">Datenschutz</a></li><li><a href="#" data-t="footer.imprint">Impressum</a></li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fbottom">
+    <div class="container"><div class="fbm">
+      <span class="fc" data-t="footer.copy">© 2026 LUMÉRA. Alle Rechte vorbehalten.</span>
+      <div class="fll"><a href="#" data-t="footer.privacy">Datenschutz</a><a href="#" data-t="footer.agb">AGB</a><a href="#" data-t="footer.revoke">Widerruf</a><a href="#" data-t="footer.imprint">Impressum</a></div>
+    </div></div>
+  </div>
+</footer>
+
+</div><!-- /landing-main -->
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+'use strict';
+
+/* ── TRANSLATIONS ── */
+const T = {
+  de: {
+    'meta.title':'LUMÉRA – Premium Kompressionsleggings',
+    'cookie.title':'Wir verwenden Cookies','cookie.text':'Wir nutzen Cookies, um dir die bestmögliche Erfahrung zu bieten. Weitere Infos in unserer Datenschutzerklärung.','cookie.link':'Datenschutzerklärung','cookie.accept':'Alle akzeptieren','cookie.decline':'Nur notwendige',
+    'nl.thanks':'Danke für deine Anmeldung!','nl.msg':'Du erhältst in Kürze eine Bestätigungs-E-Mail. Freue dich auf exklusive Deals!','nl.close':'Schließen','nl.h':'Exklusive Angebote','nl.sub':'Abonniere den Newsletter und erhalte 10% Rabatt auf deine erste Bestellung.','nl.btn':'Anmelden','nl.legal':'Mit der Anmeldung stimmst du unserer Datenschutzerklärung zu.','nl.ph':'deine@email.de',
+    'sz.title':'Größentabelle','sz.intro':'Damit deine Luméra Leggings ihren vollen Effekt entfalten können, ist die richtige Größe entscheidend.','sz.size':'Größe','sz.eu':'EU-Größe','sz.hip':'Hüfte (cm)','sz.waist':'Taille (cm)','sz.length':'Länge (cm)','sz.how':'Wie du Taille und Hüfte richtig misst:','sz.waist_h':'Taille:','sz.waist_txt':'Miss deine Taille an der schmalsten Stelle.','sz.hip_h':'Hüfte:','sz.hip_txt':'Miss deine Hüfte an der breitesten Stelle.','sz.note':'Liegt deine Messung zwischen zwei Größen? Dann wähle bitte die größere Größe.',
+    'nav.home':'Startseite','nav.collection':'Kollektion','nav.about':'Über uns','nav.faq':'FAQ','nav.contact':'Kontakt',
+    'hero.tag':'LUMÉRA · 2026 COLLECTION','hero.h1':'Die Nr. 1 für\ndein <em>Wohlgefühl</em>','hero.p':'Glattere Haut, bessere Durchblutung & mehr Leichtigkeit im Alltag.','hero.btn1':'Jetzt entdecken','hero.btn2':'Mehr erfahren',
+    'fb1.h':'Kostenloser Versand','fb1.s':'Für alle Bestellungen','fb2.h':'100 Tage Rückgabe','fb2.s':'Risikolos bestellen','fb3.h':'Kostenloser Umtausch','fb3.s':'Falsche Größe? Kein Problem','fb4.h':'Klarna verfügbar','fb4.s':'Jetzt kaufen, später zahlen',
+    'prod.section':'LUMÉRA Collection','prod.all':'Alle anzeigen →','prod.bc':'Startseite / Kompressionsleggings','prod.back':'Zurück zur Kollektion','prod.returns':'100 Tage Rückgaberecht – ohne Risiko bestellen','prod.save':'Spare 20,00 €','prod.vat':'inkl. 19% MwSt. zzgl. Versandkosten','prod.delivery':'Artikel verfügbar · Lieferzeit: 5–10 Werktage','prod.color':'Farbe:','prod.size':'Größe:','prod.sizeguide':'Größentabelle','prod.qty':'Menge','prod.atc':'IN DEN WARENKORB LEGEN',
+    'f1':'Reduziert Cellulite sichtbar','f2':'Wirkt aktiv gegen Wassereinlagerungen','f3':'Aktiviert müde & schwere Beine','f4':'Betont die Silhouette natürlich','f5':'Selbstbewusstseins-Boost garantiert',
+    'trust.dhl':'Kostenloser DHL Versand','trust.guarantee':'100% Zufriedenheitsgarantie','trust.return':'Einfacher Umtausch & Rücksendungen','trust.de':'Versand aus Deutschland','trust.stripe':'Käufer­schutz inklusive','trust.klarna':'Bezahle in 30 Tagen',
+    'acc.unique':'Was macht die Luméra Leggings einzigartig?','acc.material':'Material & Pflege','acc.delivery':'Lieferung & Rückgabe',
+    'cart.title':'Warenkorb','cart.freeship':'Du hast kostenlosen Versand freigeschaltet!','cart.empty':'Dein Warenkorb ist leer','cart.subtotal':'Zwischensumme','cart.tax':'inkl. 19% MwSt. · Versand: Kostenlos','cart.checkout':'ZUR KASSE →','cart.continue':'WEITER EINKAUFEN',
+    'co.title':'Bestellung abschließen','co.contact':'Kontaktdaten','co.fname':'Vorname *','co.lname':'Nachname *','co.phone':'Telefon *','co.email':'E-Mail *','co.order':'Deine Bestellung','co.total':'Gesamt','co.tax':'inkl. 19% MwSt. · Versand kostenlos','co.next':'Weiter zur Lieferung →','co.nextpay':'Weiter zur Zahlung →','co.payment':'Zahlung','co.shipping':'Lieferadresse','co.country':'Land / Region *','co.zip':'Postleitzahl *','co.city':'Stadt *','co.street':'Straße und Hausnummer *','co.carrier':'Versanddienstleister','co.branch':'Packstation / Postfiliale','co.back':'← Zurück','co.submit':'Jetzt kaufen','co.ok':'Bestellung erfolgreich!','co.ok_msg':'Vielen Dank! Du erhältst in Kürze eine Bestätigungs-E-Mail.','co.close':'Schließen',
+    'stat1':'sehen nach 2 Monaten weniger Cellulite','stat1s':'*Kundenbefragung 2026','stat2':'spüren leichtere Beine nach 2 Wochen','stat2s':'*Kundenbefragung 2026','stat3':'zufriedene Kundinnen in Deutschland',
+    'about.h':'Form & Gesundheit in einem','about.p':'Die Luméra Kompressionsleggings vereint medizinisch inspirierte Kompression und exklusive 3D-Technologie.',
+    'ic1.h':'Reduziert Cellulite','ic1.s':'sichtbar & nachhaltig','ic2.h':'Gegen Wassereinlagerungen','ic2.s':'wirkt aktiv','ic3.h':'Betont Silhouette','ic3.s':'natürlich & formend','ic4.h':'Aktiviert Beine','ic4.s':'müde Beine ade','ic5.h':'3× mehr Kalorien','ic5.s':'verbrenne mehr','ic6.h':'Aktive Kompression','ic6.s':'& Support',
+    'faq.h':'Häufig gestellte Fragen','faq.q1':'Wie lange dauert die Lieferung?','faq.a1':'Die Lieferzeit beträgt <strong>5–10 Werktage</strong> nach Zahlungseingang.','faq.q2':'Ist der Versand kostenlos?','faq.a2':'Ja! Der Versand ist für dich komplett kostenlos.','faq.q3':'Wie lange gilt das Rückgaberecht?','faq.a3':'Du hast <strong>100 Tage</strong> Zeit zurückzusenden.','faq.q4':'Welche Zahlungsmethoden akzeptiert ihr?','faq.a4':'PayPal, Shop Pay und Visa.',
+    'search.ph':'Produkt suchen...','search.empty':'Keine Produkte gefunden.',
+    'footer.brand':'LUMÉRA','footer.desc':'Hochwertige Kompressionsleggings für dein Wohlbefinden.','footer.payment':'ZAHLUNG & VERSAND','footer.vat':'Alle Preise inkl. 19% MwSt.','footer.info':'INFORMATIONEN','footer.legal':'RECHTLICHES','footer.shipping':'Versandinformationen','footer.revoke':'Widerrufsbelehrung','footer.agb':'AGB','footer.privacy':'Datenschutz','footer.imprint':'Impressum','footer.newsletter':'NEWSLETTER','footer.nl_sub':'Exklusive Deals und Neuheiten!','footer.copy':'© 2026 LUMÉRA. Alle Rechte vorbehalten.',
+  },
+  en: {
+    'meta.title':'LUMÉRA – Premium Compression Leggings',
+    'cookie.title':'We use cookies','cookie.text':'We use cookies to give you the best experience. More info in our Privacy Policy.','cookie.link':'Privacy Policy','cookie.accept':'Accept all','cookie.decline':'Necessary only',
+    'nl.thanks':'Thanks for signing up!','nl.msg':'You will receive a confirmation email shortly. Enjoy exclusive deals!','nl.close':'Close','nl.h':'Exclusive Offers','nl.sub':'Subscribe to our newsletter and get 10% off your first order.','nl.btn':'Subscribe','nl.legal':'By subscribing you agree to our Privacy Policy.','nl.ph':'your@email.com',
+    'sz.title':'Size Guide','sz.intro':'To get the full effect from your Luméra Leggings, choosing the right size is essential.','sz.size':'Size','sz.eu':'EU Size','sz.hip':'Hip (cm)','sz.waist':'Waist (cm)','sz.length':'Length (cm)','sz.how':'How to measure correctly:','sz.waist_h':'Waist:','sz.waist_txt':'Measure at the narrowest point of your torso, around belly button height.','sz.hip_h':'Hip:','sz.hip_txt':'Measure at the widest point over your buttocks and lower abdomen.','sz.note':'Measuring between two sizes? Choose the larger size for maximum comfort.',
+    'nav.home':'Home','nav.collection':'Collection','nav.about':'About Us','nav.faq':'FAQ','nav.contact':'Contact',
+    'hero.tag':'LUMÉRA · 2026 COLLECTION','hero.h1':'The #1 for\nyour <em>well-being</em>','hero.p':'Smoother skin, better circulation & more lightness every day.','hero.btn1':'Shop Now','hero.btn2':'Learn More',
+    'fb1.h':'Free Shipping','fb1.s':'On all orders','fb2.h':'100-Day Returns','fb2.s':'Risk-free ordering','fb3.h':'Free Exchange','fb3.s':'Wrong size? No problem','fb4.h':'Klarna available','fb4.s':'Buy now, pay later',
+    'prod.section':'LUMÉRA Collection','prod.all':'View all →','prod.bc':'Home / Compression Leggings','prod.back':'Back to collection','prod.returns':'100-day return policy – risk-free','prod.save':'Save €20.00','prod.vat':'incl. 19% VAT plus shipping','prod.delivery':'In stock · Delivery: 5–10 business days','prod.color':'Color:','prod.size':'Size:','prod.sizeguide':'Size guide','prod.qty':'Quantity','prod.atc':'ADD TO CART',
+    'f1':'Visibly reduces cellulite','f2':'Actively fights water retention','f3':'Energizes tired & heavy legs','f4':'Naturally shapes your silhouette','f5':'Confidence boost guaranteed',
+    'trust.dhl':'Free DHL shipping','trust.guarantee':'100% satisfaction guarantee','trust.return':'Easy exchange & returns','trust.de':'Shipped from Germany','trust.stripe':'Buyer protection included','trust.klarna':'Pay in 30 days',
+    'acc.unique':'What makes Luméra unique?','acc.material':'Material & Care','acc.delivery':'Delivery & Returns',
+    'cart.title':'Shopping Bag','cart.freeship':'You have unlocked free shipping!','cart.empty':'Your cart is empty','cart.subtotal':'Subtotal','cart.tax':'incl. 19% VAT · Shipping: Free','cart.checkout':'CHECKOUT →','cart.continue':'CONTINUE SHOPPING',
+    'co.title':'Complete Order','co.contact':'Contact Details','co.fname':'First name *','co.lname':'Last name *','co.phone':'Phone *','co.email':'Email *','co.order':'Your Order','co.total':'Total','co.tax':'incl. 19% VAT · Free shipping','co.next':'Continue to shipping →','co.nextpay':'Continue to payment →','co.payment':'Payment','co.shipping':'Delivery Address','co.country':'Country / Region *','co.zip':'Postal code *','co.city':'City *','co.street':'Street & house number *','co.carrier':'Carrier','co.branch':'Parcel locker / Post branch','co.back':'← Back','co.submit':'Buy now','co.ok':'Order placed successfully!','co.ok_msg':'Thank you! You will receive a confirmation email shortly.','co.close':'Close',
+    'stat1':'see less cellulite after 2 months','stat1s':'*Customer survey 2026','stat2':'feel lighter legs after 2 weeks','stat2s':'*Customer survey 2026','stat3':'satisfied customers in Germany',
+    'about.h':'Shape & Health in one','about.p':'Luméra Compression Leggings combines medically inspired compression and exclusive 3D-technology.',
+    'ic1.h':'Reduces Cellulite','ic1.s':'visibly & lastingly','ic2.h':'Fights Water Retention','ic2.s':'actively','ic3.h':'Shapes Silhouette','ic3.s':'naturally & forming','ic4.h':'Energizes Legs','ic4.s':'goodbye tired legs','ic5.h':'3× More Calories','ic5.s':'burn more','ic6.h':'Active Compression','ic6.s':'& Support',
+    'faq.h':'Frequently Asked Questions','faq.q1':'How long does delivery take?','faq.a1':'Delivery takes <strong>5–10 business days</strong> after payment.','faq.q2':'Is shipping free?','faq.a2':'Yes! Shipping is completely free for you.','faq.q3':'How long is the return policy?','faq.a3':'You have <strong>100 days</strong> to return. Free return shipping.','faq.q4':'What payment methods do you accept?','faq.a4':'PayPal, Shop Pay and Visa.',
+    'search.ph':'Search products...','search.empty':'No products found.',
+    'footer.brand':'LUMÉRA','footer.desc':'Premium compression leggings for your well-being.','footer.payment':'PAYMENT & SHIPPING','footer.vat':'All prices incl. 19% VAT.','footer.info':'INFORMATION','footer.legal':'LEGAL','footer.shipping':'Shipping Info','footer.revoke':'Right of Withdrawal','footer.agb':'Terms & Conditions','footer.privacy':'Privacy Policy','footer.imprint':'Legal Notice','footer.newsletter':'NEWSLETTER','footer.nl_sub':'Exclusive deals & news!','footer.copy':'© 2026 LUMÉRA. All rights reserved.',
+  }
+};
+
+let curLang = localStorage.getItem('lumera_lang') || 'de';
+
+function setLang(l) {
+  curLang = l;
+  localStorage.setItem('lumera_lang', l);
+  document.documentElement.lang = l;
+  document.getElementById('lde').classList.toggle('active', l==='de');
+  document.getElementById('len').classList.toggle('active', l==='en');
+  applyTrans(l);
+}
+
+function applyTrans(l) {
+  const t = T[l];
+  document.querySelectorAll('[data-t]').forEach(el => {
+    const key = el.dataset.t;
+    if (t[key] === undefined) return;
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      el.placeholder = t[key];
+    } else if (t[key].includes('<')) {
+      el.innerHTML = t[key];
+    } else {
+      el.textContent = t[key];
+    }
+  });
+  document.querySelectorAll('[data-t-ph]').forEach(el => {
+    const key = el.dataset.tPh;
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+  if (t['meta.title']) document.title = t['meta.title'];
+}
+
+/* ── COOKIE (localStorage persisted) ── */
+function initCookie() {
+  const consent = localStorage.getItem('lumera_cookie');
+  if(!consent) {
+    document.getElementById('cookie').style.display = '';
+  } else if(consent === 'accepted') {
+    loadAnalytics();
+  }
+}
+function acceptCookie() {
+  localStorage.setItem('lumera_cookie', 'accepted');
+  hideCookie(); loadAnalytics();
+}
+function declineCookie() {
+  localStorage.setItem('lumera_cookie', 'declined');
+  hideCookie();
+}
+function hideCookie() {
+  const c = document.getElementById('cookie');
+  c.style.transition = 'opacity .3s, transform .3s';
+  c.style.opacity = '0'; c.style.transform = 'translateY(100%)';
+  setTimeout(()=>c.style.display='none', 320);
+}
+function loadAnalytics() {
+  // Google Analytics / Meta Pixel could be loaded here
+  // e.g. (function(w,d,s,l,i){...})(window,document,'script','dataLayer','GA-XXXXXX');
+  console.log('[LUMÉRA] Analytics consent granted');
+}
+
+/* ── PRODUCTS DATA ── */
+const KEYCRM_KEY = 'dc8a23f9b5251601fb4a08d5360157b5d9fce065';
+const COLORS = [
+  {name:'Dunkelgrau', hex:'#555555', img:'product_images/sku%E5%9B%BE%E7%89%87/sku-1-%E6%B7%B1%E7%81%B0%E8%89%B2.jpg'},
+  {name:'Hellgrau',   hex:'#b0b0b0', img:'product_images/sku%E5%9B%BE%E7%89%87/sku-2-%E6%B5%85%E7%81%B0%E8%89%B2.jpg'},
+  {name:'Schwarz',    hex:'#1a1a1a', img:'product_images/sku%E5%9B%BE%E7%89%87/sku-3-%E9%BB%91%E8%89%B2.jpg'},
+  {name:'Pfirsich',   hex:'#FFCBA4', img:'product_images/sku%E5%9B%BE%E7%89%87/sku-4-%E6%A1%83%E8%89%B2.jpg'},
+  {name:'Khaki',      hex:'#8B7355', img:'product_images/sku%E5%9B%BE%E7%89%87/sku-5-%E6%B7%B1%E5%8D%A1%E5%85%B6%E5%B8%83%E8%89%B2.jpg'},
+  {name:'Smaragdgrün',hex:'#2E8B57', img:'product_images/sku%E5%9B%BE%E7%89%87/sku-6-%E5%AD%94%E9%9B%80%E7%BB%BF.jpg'},
+  {name:'Hellblau',   hex:'#ADD8E6', img:'product_images/sku%E5%9B%BE%E7%89%87/sku-7-%E6%B7%A1%E8%93%9D.jpg'},
+  {name:'Lavendel',   hex:'#C9A0DC', img:'product_images/sku%E5%9B%BE%E7%89%87/sku-8-%E6%B5%85%E7%B4%AB.jpg'},
+  {name:'Rosé',       hex:'#FF8DA1', img:'product_images/sku%E5%9B%BE%E7%89%87/sku-9-%E7%8E%AB%E7%BA%A2%E8%89%B2.jpg'},
+  {name:'Altrosa',    hex:'#E8B4B8', img:'product_images/sku%E5%9B%BE%E7%89%87/sku-10-%E7%B2%89%E8%89%B2.jpg'},
+  {name:'Mokka',      hex:'#6B4226', img:'product_images/sku%E5%9B%BE%E7%89%87/sku-11-%E5%92%96%E5%95%A1.jpg'},
+  {name:'Blaugrau',   hex:'#6A8CAF', img:'product_images/sku%E5%9B%BE%E7%89%87/sku-12-%E8%93%9D%E7%81%B0.jpg'},
+  {name:'Weinrot',    hex:'#722F37', img:'product_images/sku%E5%9B%BE%E7%89%87/sku-13-%E9%85%92%E7%BA%A2.jpg'},
+  {name:'Violett',    hex:'#4B0082', img:'product_images/sku%E5%9B%BE%E7%89%87/sku-14-%E6%B7%B1%E7%B4%AB.jpg'},
+];
+const MAIN_IMGS = [
+  'product_images/%E4%B8%BB%E5%9B%BE/%E4%B8%BB%E5%9B%BE-1.jpg',
+  'product_images/%E4%B8%BB%E5%9B%BE/%E4%B8%BB%E5%9B%BE-2.jpg',
+  'product_images/%E4%B8%BB%E5%9B%BE/%E4%B8%BB%E5%9B%BE-3.jpg',
+  'product_images/%E4%B8%BB%E5%9B%BE/%E4%B8%BB%E5%9B%BE-4.jpg',
+  'product_images/%E4%B8%BB%E5%9B%BE/%E4%B8%BB%E5%9B%BE-5.jpg',
+];
+
+/* ── BUILD PRODUCT GRID ── */
+function buildGrid() {
+  const t = T[curLang];
+  document.getElementById('pgrid').innerHTML = COLORS.map((c,i) => `
+    <div class="pcard reveal-card" data-name="${c.name.toLowerCase()} luméra kompressionsleggings" data-color-idx="${i}" style="cursor:pointer">
+      <div class="pcimg">
+        <span class="pbadge">SALE</span>
+        <img class="main-img" id="cimg-${i}" src="${c.img}" alt="Luméra ${c.name}" loading="lazy">
+      </div>
+      <div class="pbody">
+        <div class="ptitle">Luméra 3D – Kompressionsleggings</div>
+        <div style="font-size:.72rem;color:var(--dgray);margin-bottom:6px;font-weight:300">${c.name}</div>
+        <div class="pprices"><span class="p-old">59,99&nbsp;€</span><span class="p-now">39,99&nbsp;€</span></div>
+        <div class="pdel"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>${t['fb1.s']||'Lieferzeit: 5–10 Werktage'}</div>
+        <button class="pc-btn" data-ci="${i}" onclick="window.openModal(null,${i})">Details ansehen</button>
+      </div>
+    </div>`).join('');
+  /* Attach click handlers directly — most reliable approach */
+  document.querySelectorAll('#pgrid .pc-btn[data-ci]').forEach(btn => {
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      window.openModal(e, parseInt(this.dataset.ci, 10));
+    });
+  });
+  document.querySelectorAll('#pgrid .pcimg').forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', function(e){
+      const card = this.closest('.pcard[data-color-idx]');
+      if(card) window.openModal(e, parseInt(card.dataset.colorIdx, 10));
+    });
+  });
+  /* Re-run card animations after grid rebuild */
+  if(window.initReveal) window.initReveal();
+}
+
+/* cardSwatch removed — color selection only inside product modal */
+
+/* ── SEARCH ── */
+function toggleSearch() {
+  const s=document.getElementById('sbar');
+  s.classList.toggle('open');
+  if(s.classList.contains('open')){ document.getElementById('sinput').focus(); filterP(''); }
+}
+function filterP(q) {
+  q=q.toLowerCase().trim(); let n=0;
+  document.querySelectorAll('.pcard').forEach(c=>{const show=!q||c.dataset.name.includes(q);c.style.display=show?'':'none';if(show)n++;});
+  document.getElementById('nores').classList.toggle('show',n===0&&q!=='');
+}
+
+/* ── MENU ── */
+function openMenu(){document.getElementById('mmenu').classList.add('open');document.body.style.overflow='hidden';}
+function closeMenu(){document.getElementById('mmenu').classList.remove('open');document.body.style.overflow='';}
+
+/* ── CART ── */
+let cart=[];
+function openCart(){document.getElementById('cdraw').classList.add('open');document.getElementById('c-ov').classList.add('open');document.body.style.overflow='hidden';renderCart();}
+function closeCart(){document.getElementById('cdraw').classList.remove('open');document.getElementById('c-ov').classList.remove('open');document.body.style.overflow='';}
+function addToCart(title,color,size,img,qty=1){
+  const key=`${title}|${color}|${size}`;
+  const ex=cart.find(i=>i.key===key);
+  if(ex)ex.qty+=qty; else cart.push({key,title,color,size,img,qty,price:3999});
+  updateBadge();openCart();
+  showToast(`${color} (${size}) hinzugefügt ✓`,'ok');
+}
+function updateBadge(){
+  const n=cart.reduce((s,i)=>s+i.qty,0);
+  const b=document.getElementById('cbadge');
+  b.textContent=n;b.style.display=n>0?'flex':'none';
+  document.getElementById('ch-cnt').textContent=n;
+}
+function renderCart(){
+  const body=document.getElementById('cb'),foot=document.getElementById('cf');
+  if(!cart.length){
+    body.innerHTML=`<div class="ce"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><p style="margin-top:10px;font-size:.86rem;color:var(--gray)">${T[curLang]['cart.empty']||'Dein Warenkorb ist leer'}</p></div>`;
+    foot.style.display='none';return;
+  }
+  let html='',tot=0;
+  cart.forEach((item,i)=>{
+    tot+=item.price*item.qty;
+    html+=`<div class="ci">
+      <div class="ci-img"><img src="${item.img}" alt="${item.title}" loading="lazy"></div>
+      <div class="ci-body">
+        <div class="ci-t">${item.title}</div>
+        <div class="ci-v">${item.color} · ${item.size}</div>
+        <div class="ci-prices"><span class="ci-pnow">${fmt(item.price*item.qty)}</span><span class="ci-pold">${fmt(5999*item.qty)}</span></div>
+        <div class="ci-qty">
+          <button onclick="chCart(${i},-1)">−</button>
+          <span>${item.qty}</span>
+          <button onclick="chCart(${i},1)">+</button>
+        </div>
+      </div>
+      <div class="ci-right">
+        <button class="ci-rm" onclick="rmCart(${i})" title="Entfernen">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+        </button>
+      </div>
+    </div>`;
+  });
+  body.innerHTML=html;foot.style.display='block';
+  document.getElementById('ctot').textContent=fmt(tot);
+}
+function chCart(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);updateBadge();renderCart();}
+function rmCart(i){cart.splice(i,1);updateBadge();renderCart();}
+function fmt(c){return (c/100).toFixed(2).replace('.',',')+'\u00a0€';}
+
+/* ── PRODUCT PAGE ── */
+let selColor='Schwarz',selSize='S',selTitle='';
+function openModal(e, colorIdx) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  var idx = parseInt(colorIdx, 10);
+  var c = COLORS[idx];
+  if (!c) return;
+  selColor = c.name; selSize = 'S'; selTitle = 'Luméra 3D – Kompressionsleggings';
+  var el;
+  el = document.getElementById('mtitle'); if (el) el.textContent = selTitle;
+  el = document.getElementById('sc-label'); if (el) el.textContent = c.name;
+  el = document.getElementById('ss-label'); if (el) el.textContent = 'S';
+  el = document.getElementById('mq'); if (el) el.value = 1;
+  el = document.getElementById('mgal-main'); if (el) el.src = c.img;
+  el = document.getElementById('mcsw');
+  if (el) el.innerHTML = COLORS.map(function(cc, ci) {
+    var active = cc.name === c.name ? ' active' : '';
+    return '<div class="ct-item"><button type="button" class="ct-btn' + active + '" data-ci="' + ci + '" title="' + cc.name + '"><img src="' + cc.img + '" alt="' + cc.name + '" loading="lazy"></button><span class="ct-name">' + cc.name + '</span></div>';
+  }).join('');
+  document.querySelectorAll('.szb').forEach(function(b) { b.classList.toggle('active', b.textContent === 'S'); });
+  var btn = document.getElementById('matcbtn'); if (btn) btn.classList.remove('added');
+  document.getElementById('landing-main').style.display = 'none';
+  document.getElementById('pmodal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  window.scrollTo(0, 0);
+}
+window.openModal = openModal;
+function closeModal() {
+  document.getElementById('pmodal').classList.remove('open');
+  document.getElementById('landing-main').style.display = '';
+  document.body.style.overflow = '';
+  window.scrollTo(0, 0);
+  /* Re-run reveal so any sections below fold become visible */
+  setTimeout(function(){ if(window.initReveal) window.initReveal(); }, 50);
+}
+document.addEventListener('click', function(ev) {
+  var ctBtn = ev.target.closest('.ct-btn[data-ci]');
+  if (ctBtn && document.getElementById('pmodal').classList.contains('open')) {
+    var ci = parseInt(ctBtn.dataset.ci, 10);
+    var cc = COLORS[ci]; if (!cc) return;
+    document.querySelectorAll('.ct-btn').forEach(function(b) { b.classList.remove('active'); });
+    ctBtn.classList.add('active'); selColor = cc.name;
+    document.getElementById('sc-label').textContent = cc.name;
+    var m = document.getElementById('mgal-main'); if (m) m.src = cc.img;
+    return;
+  }
+  var pcBtn = ev.target.closest('.pc-btn[data-ci]');
+  if (pcBtn) { openModal(ev, parseInt(pcBtn.dataset.ci, 10)); return; }
+  var pcImg = ev.target.closest('.pcimg');
+  if (pcImg) {
+    var card = pcImg.closest('.pcard[data-color-idx]');
+    if (card) openModal(ev, parseInt(card.dataset.colorIdx, 10));
+  }
+});
+function selSz(btn,sz){document.querySelectorAll('.szb').forEach(b=>b.classList.remove('active'));btn.classList.add('active');selSize=sz;document.getElementById('ss-label').textContent=sz;}
+function chQ(d){const i=document.getElementById('mq');i.value=Math.max(1,Math.min(99,parseInt(i.value)+d));}
+function addFromModal(){
+  const qty=parseInt(document.getElementById('mq').value);
+  const c=COLORS.find(x=>x.name===selColor)||COLORS[0];
+  const btn=document.getElementById('matcbtn');
+  btn.classList.add('added');
+  addToCart(selTitle,selColor,selSize,c.img,qty);
+  setTimeout(function(){ btn.classList.remove('added'); closeModal(); }, 900);
+}
+
+/* ── SIZE GUIDE ── */
+function openSizeGuide(){document.getElementById('sg-ov').classList.add('open');document.body.style.overflow='hidden';}
+function closeSizeGuide(){document.getElementById('sg-ov').classList.remove('open');document.body.style.overflow='';}
+
+/* ── ACCORDION ── */
+function tAcc(btn){
+  const body=btn.nextElementSibling,isO=body.classList.contains('open');
+  btn.closest('.acc')?.querySelectorAll('.acbd.open').forEach(b=>{b.classList.remove('open');b.previousElementSibling.classList.remove('open');});
+  if(!isO){body.classList.add('open');btn.classList.add('open');}
+}
+
+/* ── CHECKOUT ── */
+/* helper: simple value getter */
+const EU = [
+  {code:'AT',name:'Österreich',phone:'+43',carriers:['Österreichische Post','DHL','DPD','GLS']},
+  {code:'BE',name:'Belgien',phone:'+32',carriers:['bpost','DHL','DPD','GLS']},
+  {code:'BG',name:'Bulgarien',phone:'+359',carriers:['Speedy','DHL','DPD']},
+  {code:'CY',name:'Zypern',phone:'+357',carriers:['Cyprus Post','DHL']},
+  {code:'CZ',name:'Tschechien',phone:'+420',carriers:['Česká pošta','DHL','DPD','Zásilkovna']},
+  {code:'DE',name:'Deutschland',phone:'+49',carriers:['DHL','Deutsche Post','Hermes','DPD','GLS','UPS']},
+  {code:'DK',name:'Dänemark',phone:'+45',carriers:['PostNord','DHL','DPD']},
+  {code:'EE',name:'Estland',phone:'+372',carriers:['Omniva','DHL','DPD']},
+  {code:'ES',name:'Spanien',phone:'+34',carriers:['Correos','DHL','SEUR','GLS']},
+  {code:'FI',name:'Finnland',phone:'+358',carriers:['Posti','DHL','DPD']},
+  {code:'FR',name:'Frankreich',phone:'+33',carriers:['La Poste','DHL','DPD','GLS']},
+  {code:'GR',name:'Griechenland',phone:'+30',carriers:['ELTA','DHL','DPD']},
+  {code:'HR',name:'Kroatien',phone:'+385',carriers:['Hrvatska pošta','DHL','DPD']},
+  {code:'HU',name:'Ungarn',phone:'+36',carriers:['Magyar Posta','DHL','DPD']},
+  {code:'IE',name:'Irland',phone:'+353',carriers:['An Post','DHL','DPD']},
+  {code:'IT',name:'Italien',phone:'+39',carriers:['Poste Italiane','DHL','DPD','GLS']},
+  {code:'LT',name:'Litauen',phone:'+370',carriers:['Lietuvos paštas','DHL','DPD']},
+  {code:'LU',name:'Luxemburg',phone:'+352',carriers:['Post Luxembourg','DHL']},
+  {code:'LV',name:'Lettland',phone:'+371',carriers:['Latvijas Pasts','DHL','DPD']},
+  {code:'MT',name:'Malta',phone:'+356',carriers:['MaltaPost','DHL']},
+  {code:'NL',name:'Niederlande',phone:'+31',carriers:['PostNL','DHL','DPD','GLS']},
+  {code:'PL',name:'Polen',phone:'+48',carriers:['InPost','Poczta Polska','DHL','DPD']},
+  {code:'PT',name:'Portugal',phone:'+351',carriers:['CTT','DHL','DPD']},
+  {code:'RO',name:'Rumänien',phone:'+40',carriers:['Poşta Română','FAN Courier','DPD']},
+  {code:'SE',name:'Schweden',phone:'+46',carriers:['PostNord','DHL','DPD']},
+  {code:'SI',name:'Slowenien',phone:'+386',carriers:['Pošta Slovenije','DHL','DPD']},
+  {code:'SK',name:'Slowakei',phone:'+421',carriers:['Slovenská pošta','DHL','DPD']},
+];
+/* ── value helper ── */
+function v(id){return (document.getElementById(id)?.value||'').trim();}
+
+/* ── email validator ── */
+function isValidEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((e||'').trim());}
+
+/* ── field error helper ── */
+function showFieldErr(id,show){const el=document.getElementById(id);if(el)el.classList.toggle('show',!!show);}
+
+/* ── Country select ── */
+function buildCountrySelect(){
+  const sel=document.getElementById('co-country');
+  if(!sel||sel.options.length>1)return;
+  EU.forEach(c=>{const o=document.createElement('option');o.value=c.code;o.textContent=c.name;sel.appendChild(o);});
+  sel.value='DE'; onCountryChange();
+}
+function onCountryChange(){
+  const code=v('co-country');
+  const c=EU.find(x=>x.code===code);
+  const pc=document.getElementById('co-phone-code');
+  if(c&&pc)pc.value=c.phone;
+}
+
+/* ── Phone code dropdown ── */
+function buildPhoneCodes(){
+  const sel=document.getElementById('co-phone-code');
+  if(!sel||sel.options.length>1)return;
+  EU.forEach(c=>{const o=document.createElement('option');o.value=c.phone;o.textContent=c.phone+' '+c.code;sel.appendChild(o);});
+  sel.value='+49';
+}
+
+/* ── Payment method ── */
+let selectedPay='paypal';
+function selectPay(method){
+  selectedPay=method;
+  ['paypal','shoppay','card'].forEach(m=>{
+    const el=document.getElementById('pay-opt-'+m);
+    if(el)el.classList.toggle('selected',m===method);
+    const r=document.querySelector('input[name="paymethod"][value="'+m+'"]');
+    if(r)r.checked=(m===method);
+  });
+  const cf=document.getElementById('card-fields');
+  if(cf)cf.style.display=(method==='card')?'block':'none';
+  const pi=document.getElementById('paypal-info');
+  if(pi)pi.style.display=(method==='paypal')?'block':'none';
+  updatePayBtn();
+}
+function updatePayBtn(){
+  const btn=document.getElementById('co-pay-btn');
+  if(!btn)return;
+  if(selectedPay==='paypal'){
+    btn.style.cssText='background:#FFC439;border-color:#FFC439;color:#003087;font-size:.92rem;width:100%;padding:14px;border-radius:var(--r);border:1.5px solid;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;font-weight:600';
+    btn.innerHTML='<img src="payment_logos/paypal.png" alt="PayPal" style="height:20px"> Zahlen mit PayPal';
+  } else if(selectedPay==='shoppay'){
+    btn.style.cssText='background:#5A31F4;border-color:#5A31F4;color:#fff;font-size:.92rem;width:100%;padding:14px;border-radius:var(--r);border:1.5px solid;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;font-weight:600';
+    btn.innerHTML='<img src="payment_logos/shop-pay.png" alt="" style="height:18px;filter:brightness(0) invert(1)"> Mit Shop Pay zahlen';
+  } else {
+    btn.style.cssText='background:#111;border-color:#111;color:#fff;font-size:.92rem;width:100%;padding:14px;border-radius:var(--r);border:1.5px solid;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit;font-weight:600';
+    btn.innerHTML='Jetzt kaufen';
+  }
+}
+
+/* ── Billing address toggle ── */
+function setBilling(type){
+  ['same','diff'].forEach(t=>{
+    const el=document.getElementById('bill-'+t);
+    if(el)el.classList.toggle('selected',t===type);
+    const r=document.querySelector('input[name="billing"][value="'+t+'"]');
+    if(r)r.checked=(t===type);
+  });
+  const bf=document.getElementById('billing-fields');
+  if(bf)bf.style.display=(type==='diff')?'block':'none';
+}
+
+/* ── Shop Pay page ── */
+function openShopPay(){
+  closeCart();
+  const sp=document.getElementById('shoppay-page');
+  if(sp)sp.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeShopPay(){
+  const sp=document.getElementById('shoppay-page');
+  if(sp)sp.classList.remove('open');
+  document.body.style.overflow='';
+}
+function shopPayContinue(){
+  const email=document.getElementById('sp-email')?.value?.trim();
+  if(!email||!isValidEmail(email)){showToast('Bitte gültige E-Mail eingeben.','err');return;}
+  showToast('Weiterleitung zu Shop Pay…','ok');
+  setTimeout(()=>window.open('https://shop.app/','_blank'),1200);
+}
+function shopPayPasskey(){showToast('Passkey-Anmeldung wird gestartet…','ok');}
+
+/* Express PayPal: pre-select PayPal and scroll to submit */
+function expressPaypal(){
+  selectPay('paypal');
+  openCheckout();
+  setTimeout(()=>{
+    const btn=document.getElementById('co-pay-btn');
+    if(btn)btn.scrollIntoView({behavior:'smooth',block:'center'});
+  },300);
+}
+
+/* ── Open / Close checkout ── */
+function openCheckout(){
+  closeCart();
+  const list=document.getElementById('co-items-list');
+  let html='',tot=0;
+  cart.forEach(item=>{
+    tot+=item.price*item.qty;
+    html+=`<div class="co-order-item">
+      <div class="co-order-img"><img src="${item.img}" alt=""><span class="co-order-qty">${item.qty}</span></div>
+      <div class="co-order-info"><strong>${item.title}</strong><span>${item.color} · ${item.size}</span></div>
+      <span class="co-order-price">${fmt(item.price*item.qty)}</span>
+    </div>`;
+  });
+  if(list)list.innerHTML=html;
+  const totStr=fmt(tot);
+  const gtot=document.getElementById('co-gtot');const csub=document.getElementById('co-sub');
+  if(gtot)gtot.textContent=totStr;if(csub)csub.textContent=totStr;
+  /* Reset form visibility */
+  const form=document.getElementById('co-form'),succ=document.getElementById('co-success');
+  const rp=document.getElementById('co-right-panel');
+  if(form)form.style.display='';if(succ)succ.style.display='none';if(rp)rp.style.display='';
+  const wrap=document.getElementById('co-page-wrap');
+  if(wrap)wrap.style.gridTemplateColumns='';
+  document.getElementById('co-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('co-modal').scrollTop=0;
+  buildCountrySelect(); buildPhoneCodes(); selectPay('paypal');
+}
+function closeCheckout(){
+  document.getElementById('co-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* ── Submit order ── */
+async function submitOrder(){
+  if(!cart.length){showToast(curLang==='en'?'Cart is empty.':'Warenkorb ist leer.','err');return;}
+  /* Validate required fields */
+  let ok=true;
+  const em=v('co-email'),fn=v('co-fname'),ln=v('co-lname');
+  if(!isValidEmail(em)){document.getElementById('co-email')?.classList.add('err');showFieldErr('err-email',true);ok=false;}else{document.getElementById('co-email')?.classList.remove('err');showFieldErr('err-email',false);}
+  if(!fn){document.getElementById('co-fname')?.classList.add('err');showFieldErr('err-fname',true);ok=false;}else{document.getElementById('co-fname')?.classList.remove('err');showFieldErr('err-fname',false);}
+  if(!ln){document.getElementById('co-lname')?.classList.add('err');showFieldErr('err-lname',true);ok=false;}else{document.getElementById('co-lname')?.classList.remove('err');showFieldErr('err-lname',false);}
+  if(!ok){showToast(curLang==='en'?'Please fill required fields.':'Bitte alle Pflichtfelder ausfüllen.','err');return;}
+  if(selectedPay==='shoppay'){openShopPay();return;}
+  const btn=document.getElementById('co-pay-btn');
+  const orig=btn?btn.innerHTML:'';
+  if(btn){btn.textContent=curLang==='en'?'Processing...':'Wird verarbeitet...';btn.disabled=true;}
+  const cObj=EU.find(c=>c.code===v('co-country'));
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const phone=(v('co-phone-code')+' '+v('co-phone')).trim();
+  const payload={
+    source_id:1,
+    buyer:{full_name:`${fn} ${ln}`,phone,email:em},
+    shipping:{shipping_service:'DHL',address:{country:cObj?.name||v('co-country'),city:v('co-city'),zip:v('co-zip'),address:v('co-street-manual')}},
+    products:cart.map(item=>({name:`${item.title} – ${item.color} – ${item.size}`,sku:`LUM-${item.color.toUpperCase().slice(0,3)}-${item.size}`,quantity:item.qty,price:item.price/100,properties:[{name:'Farbe',value:item.color},{name:'Größe',value:item.size}]})),
+    total_price:total/100,shipping_price:0,discount:0,currency_code:'EUR',
+    payment_method:selectedPay,
+    comment:`Website Order · ${selectedPay} · ${new Date().toLocaleString('de-DE')}`
+  };
+  try{
+    await fetch('https://openapi.keycrm.app/v1/order',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+KEYCRM_KEY},body:JSON.stringify(payload)});
+  }catch(e){console.warn('[LUMÉRA] KeyCRM:',e.message);}
+  /* Show success */
+  const form=document.getElementById('co-form'),succ=document.getElementById('co-success');
+  const rp=document.getElementById('co-right-panel');
+  const wrap=document.getElementById('co-page-wrap');
+  if(form)form.style.display='none';if(succ)succ.style.display='block';
+  if(rp)rp.style.display='none';
+  if(wrap)wrap.style.gridTemplateColumns='1fr';
+  document.getElementById('co-modal').scrollTop=0;
+  cart=[];updateBadge();
+  if(btn){btn.innerHTML=orig;btn.disabled=false;}
+}
+
+/* ── NEWSLETTER ── */
+function submitNl(){const e=document.getElementById('nl-email').value.trim();if(!e||!e.includes('@')){showToast(curLang==='en'?'Please enter valid email.':'Bitte gültige E-Mail eingeben.','err');return;}document.getElementById('nl-email').value='';openNl();}
+
+function openNl(){document.getElementById('nl-ov').classList.add('open');document.body.style.overflow='hidden';}
+function closeNl(){document.getElementById('nl-ov').classList.remove('open');document.body.style.overflow='';}
+
+/* ── TOAST ── */
+function showToast(msg,type='ok'){const t=document.getElementById('toast'),s=document.getElementById('tmsg');t.className='toast '+type;s.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
+
+/* ── ESC ── */
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCart();closeModal();closeCheckout();closeNl();closeMenu();closeSizeGuide();}});
+
+/* ── INIT ── */
+applyTrans(curLang);
+buildGrid();
+buildCountrySelect();
+buildPhoneCodes();
+initCookie();
+
+/* ══════════ ANIMATION ENGINE ══════════ */
+
+/* 1 · Scroll-reveal with IntersectionObserver */
+window.initReveal = function() {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if(en.isIntersecting) {
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
+    });
+  }, {threshold: 0, rootMargin: '0px 0px 60px 0px'});
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-card').forEach(el => {
+    if(!el.classList.contains('in')) io.observe(el);
+  });
+};
+window.initReveal();
+/* Fallback: ensure all reveal elements become visible after 2.5s regardless */
+setTimeout(function(){
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.reveal-card').forEach(function(el){
+    el.classList.add('in');
+  });
+}, 2500);
+
+/* 2 · Hero parallax on scroll */
+(function(){
+  const heroBg = document.getElementById('hero-bg');
+  if(!heroBg) return;
+  let ticking = false;
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      requestAnimationFrame(function(){
+        const y = window.scrollY;
+        heroBg.style.transform = 'translateY(' + (y * 0.35) + 'px)';
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, {passive: true});
+})();
+
+/* 3 · Ripple removed per request */
+
+/* 4 · Animated number counters */
+function animCount(el, target, suffix, duration) {
+  let start = 0;
+  const step = target / (duration / 16);
+  const timer = setInterval(() => {
+    start = Math.min(start + step, target);
+    el.textContent = Math.floor(start).toLocaleString('de-DE') + suffix;
+    if(start >= target) clearInterval(timer);
+  }, 16);
+}
+(function(){
+  const stats = [
+    {sel: '.stat-12k', val: 12000, suffix: '+'},
+    {sel: '.stat-100', val: 100, suffix: ' Tage'},
+    {sel: '.stat-48', val: 4.8, suffix: '/5', isFloat: true},
+  ];
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if(!en.isIntersecting) return;
+      const el = en.target;
+      const match = stats.find(s => el.matches(s.sel));
+      if(match) {
+        if(match.isFloat){
+          let v=0; const step=match.val/(60);
+          const t=setInterval(()=>{v=Math.min(v+step,match.val);el.textContent=v.toFixed(1)+match.suffix;if(v>=match.val)clearInterval(t);},16);
+        } else {
+          animCount(el, match.val, match.suffix, 1200);
+        }
+        io.unobserve(el);
+      }
+    });
+  }, {threshold: 0.5});
+  document.querySelectorAll('.stat-12k,.stat-100,.stat-48').forEach(el => io.observe(el));
+})();
+
+/* 5 · Card hover tilt effect */
+document.addEventListener('mousemove', function(ev){
+  const card = ev.target.closest('.pcard');
+  if(!card) return;
+  const rect = card.getBoundingClientRect();
+  const dx = ((ev.clientX - rect.left) / rect.width - 0.5) * 2;
+  const dy = ((ev.clientY - rect.top) / rect.height - 0.5) * 2;
+  card.style.transform = `perspective(700px) rotateY(${dx*3.5}deg) rotateX(${-dy*2.5}deg) translateY(-3px)`;
+  card.style.transition = 'transform .08s ease';
+});
+document.addEventListener('mouseleave', function(ev){
+  const card = ev.target.closest && ev.target.closest('.pcard');
+  if(!card) return;
+  card.style.transform = '';
+  card.style.transition = 'transform .4s ease';
+}, true);
+
+/* 6 · Stagger product cards on build (already handled by IntersectionObserver + delay-N) */
+(function(){
+  const pgrid = document.getElementById('pgrid');
+  if(!pgrid) return;
+  const io2 = new IntersectionObserver(entries => {
+    entries.forEach((en, idx) => {
+      if(en.isIntersecting){
+        setTimeout(() => en.target.classList.add('in'), idx * 60);
+        io2.unobserve(en.target);
+      }
+    });
+  }, {threshold: 0.06});
+  document.querySelectorAll('.reveal-card').forEach(el => io2.observe(el));
+})();
+
+/* 7 · Smooth header shadow on scroll */
+(function(){
+  const hdr = document.querySelector('.header');
+  if(!hdr) return;
+  window.addEventListener('scroll', function(){
+    hdr.style.boxShadow = window.scrollY > 10
+      ? '0 2px 20px rgba(0,0,0,.08)'
+      : '0 1px 4px rgba(0,0,0,.04)';
+  }, {passive: true});
+})();
+</script>
+</body>
+</html>

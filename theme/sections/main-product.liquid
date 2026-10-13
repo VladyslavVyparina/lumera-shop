@@ -1,0 +1,193 @@
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+
+<div class="product-page container">
+
+  <!-- Product Gallery -->
+  <div class="product-gallery" id="product-gallery">
+    <div class="product-gallery__thumbnails" id="product-thumbnails">
+      {% for image in product.images %}
+        <button
+          class="product-gallery__thumb {% if forloop.first %}active{% endif %}"
+          data-src="{{ image | img_url: '1200x' }}"
+          aria-label="Bild {{ forloop.index }}"
+        >
+          <img src="{{ image | img_url: '120x' }}" alt="{{ image.alt | escape }}" width="80" height="80" loading="lazy">
+        </button>
+      {% endfor %}
+    </div>
+    <div class="product-gallery__main">
+      {% if product.compare_at_price > product.price %}
+        <span class="product-badge">Sale</span>
+      {% endif %}
+      <img
+        id="main-product-image"
+        src="{{ featured_image | img_url: '1200x' }}"
+        alt="{{ featured_image.alt | escape }}"
+        class="product-gallery__main-img"
+        width="600"
+        height="600"
+      >
+    </div>
+  </div>
+
+  <!-- Product Info -->
+  <div class="product-info">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li><a href="/">Startseite</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="{{ product.collections.first.url | default: '/collections/all' }}">{{ product.collections.first.title | default: 'Alle Produkte' }}</a></li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page">{{ product.title }}</li>
+      </ol>
+    </nav>
+
+    <h1 class="product-info__title">{{ product.title }}</h1>
+
+    <!-- Price -->
+    <div class="product-info__price" id="product-price">
+      {% if product.compare_at_price > product.price %}
+        <span class="price--compare">{{ product.compare_at_price | money }}</span>
+        <span class="price--current price--sale">{{ product.price | money }}</span>
+        <span class="price--savings">Du sparst {{ product.compare_at_price | minus: product.price | money }}</span>
+      {% else %}
+        <span class="price--current">{{ product.price | money }}</span>
+      {% endif %}
+      <p class="price--tax-note">inkl. 19% MwSt. zzgl. <a href="/pages/versand">Versandkosten</a></p>
+    </div>
+
+    <!-- Delivery Time -->
+    <div class="product-info__delivery">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+      <span>Lieferzeit: <strong>5–10 Werktage</strong></span>
+    </div>
+
+    <form action="/cart/add" method="post" id="product-form" class="product-info__form">
+      <input type="hidden" name="form_type" value="product">
+      <input type="hidden" name="utf8" value="✓">
+      <input type="hidden" name="id" id="variant-id" value="{{ current_variant.id }}">
+
+      {% for option in product.options_with_values %}
+        <div class="product-option" data-option-index="{{ forloop.index0 }}">
+          <div class="product-option__header">
+            <label class="product-option__label">{{ option.name }}:
+              <strong id="option-{{ forloop.index0 }}-display">{{ option.selected_value }}</strong>
+            </label>
+          </div>
+
+          {% if option.name == 'Farbe' or option.name == 'Color' %}
+            <div class="product-option__swatches">
+              {% for value in option.values %}
+                {% assign color_key = value | downcase | replace: ' ', '-' %}
+                <button
+                  type="button"
+                  class="color-swatch {% if option.selected_value == value %}active{% endif %}"
+                  data-value="{{ value }}"
+                  data-option-index="{{ forloop.parentloop.index0 }}"
+                  title="{{ value }}"
+                  style="background-color: var(--color-{{ color_key }}, #ccc);"
+                  aria-label="Farbe {{ value }}"
+                >
+                  <span class="sr-only">{{ value }}</span>
+                </button>
+              {% endfor %}
+            </div>
+          {% elsif option.name == 'Größe' or option.name == 'Size' %}
+            <div class="product-option__sizes">
+              {% for value in option.values %}
+                <button
+                  type="button"
+                  class="size-btn {% if option.selected_value == value %}active{% endif %}"
+                  data-value="{{ value }}"
+                  data-option-index="{{ forloop.parentloop.index0 }}"
+                  aria-label="Größe {{ value }}"
+                >{{ value }}</button>
+              {% endfor %}
+            </div>
+          {% else %}
+            <select name="options[{{ option.name }}]" class="product-option__select" data-option-index="{{ forloop.index0 }}">
+              {% for value in option.values %}
+                <option value="{{ value }}" {% if option.selected_value == value %}selected{% endif %}>{{ value }}</option>
+              {% endfor %}
+            </select>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+      <!-- Quantity -->
+      <div class="product-quantity">
+        <label class="product-option__label">Menge:</label>
+        <div class="quantity-selector">
+          <button type="button" class="quantity-btn" id="qty-minus" aria-label="Menge verringern">−</button>
+          <input type="number" name="quantity" id="quantity-input" value="1" min="1" max="99" class="quantity-input" aria-label="Menge">
+          <button type="button" class="quantity-btn" id="qty-plus" aria-label="Menge erhöhen">+</button>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        id="add-to-cart-btn"
+        class="btn btn--primary btn--full btn--large"
+        {% unless current_variant.available %}disabled{% endunless %}
+      >
+        {% if current_variant.available %}
+          In den Warenkorb
+        {% else %}
+          Ausverkauft
+        {% endif %}
+      </button>
+
+      <div class="product-info__trust">
+        <div class="trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#96bf48" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Bezahlung über <strong style="color:#5a8e00">Shopify Payments</strong> – sicher &amp; verschlüsselt</span>
+        </div>
+        <div class="trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+          <span>100 Tage Rückgaberecht</span>
+        </div>
+        <div class="trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          <span>Kostenloser Versand</span>
+        </div>
+      </div>
+    </form>
+
+    <!-- Product Description -->
+    {% if product.description != blank %}
+      <div class="product-info__description">
+        <details open>
+          <summary>Produktbeschreibung</summary>
+          <div class="description-content">{{ product.description }}</div>
+        </details>
+      </div>
+    {% endif %}
+
+    <!-- Return info -->
+    <div class="product-info__return-info">
+      <details>
+        <summary>Rückgabe & Lieferung</summary>
+        <div class="description-content">
+          <p><strong>Lieferzeit:</strong> 5–10 Werktage nach Zahlungseingang.</p>
+          <p><strong>Kostenloser Versand</strong> innerhalb Deutschlands.</p>
+          <p><strong>Rückgabe:</strong> Du hast 100 Tage Zeit, das Produkt zurückzusenden. Die Rücksendung ist kostenlos. Erstattung innerhalb von 14 Tagen.</p>
+          <p><strong>Widerrufsrecht:</strong> Du hast das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Details findest du in unserer <a href="/pages/widerruf">Widerrufsbelehrung</a>.</p>
+        </div>
+      </details>
+    </div>
+
+  </div>
+</div>
+
+<!-- Variants JSON for JavaScript -->
+<script type="application/json" id="product-variants-json">
+  {{ product.variants | json }}
+</script>
+
+{% schema %}
+{
+  "name": "Produktseite",
+  "settings": []
+}
+{% endschema %}

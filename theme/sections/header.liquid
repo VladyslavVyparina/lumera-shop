@@ -1,0 +1,91 @@
+<header class="header" id="site-header">
+  <div class="header__inner container">
+
+    <!-- Mobile Menu Button -->
+    <button class="header__menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+
+    <!-- Logo -->
+    <div class="header__logo">
+      <a href="/" class="header__logo-link">
+        {% if section.settings.logo != blank %}
+          <img src="{{ section.settings.logo | img_url: '200x' }}" alt="{{ shop.name }}" class="header__logo-img" width="160" height="auto">
+        {% else %}
+          <img src="{{ 'lumera-logo.png' | asset_url }}" alt="LUMÉRA" class="header__logo-img" width="220" height="auto" style="height:58px;width:auto;max-width:220px">
+        {% endif %}
+      </a>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="header__nav" id="main-nav" aria-label="Hauptnavigation">
+      <ul class="header__nav-list">
+        <li><a href="/" class="header__nav-link">Startseite</a></li>
+        <li><a href="/collections/leggings" class="header__nav-link">Kompressionsleggings</a></li>
+        <li><a href="/collections/shorts" class="header__nav-link">Kompressionsshorts</a></li>
+        <li><a href="/pages/ueber-uns" class="header__nav-link">Über uns</a></li>
+        <li><a href="/pages/faq" class="header__nav-link">FAQ</a></li>
+        <li><a href="/pages/kontakt" class="header__nav-link">Hilfe & Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header__actions">
+      <button class="header__search-toggle" aria-label="Suche" id="search-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+      </button>
+      <button class="header__cart-toggle" id="cart-toggle" aria-label="Warenkorb öffnen">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span class="header__cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Search Bar (Hidden by default) -->
+  <div class="header__search" id="search-bar" style="display:none;">
+    <div class="container">
+      <form action="/search" method="get" class="header__search-form">
+        <input type="text" name="q" placeholder="Suchen..." class="header__search-input" aria-label="Suchen">
+        <button type="submit" class="header__search-btn" aria-label="Suche starten">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+        </button>
+        <button type="button" class="header__search-close" id="search-close" aria-label="Suche schließen">&times;</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav__inner">
+      <button class="mobile-nav__close" id="mobile-nav-close" aria-label="Menü schließen">&times;</button>
+      <ul class="mobile-nav__list">
+        <li><a href="/" class="mobile-nav__link">Startseite</a></li>
+        <li><a href="/collections/leggings" class="mobile-nav__link">Kompressionsleggings</a></li>
+        <li><a href="/collections/shorts" class="mobile-nav__link">Kompressionsshorts</a></li>
+        <li><a href="/pages/ueber-uns" class="mobile-nav__link">Über uns</a></li>
+        <li><a href="/pages/faq" class="mobile-nav__link">FAQ</a></li>
+        <li><a href="/pages/kontakt" class="mobile-nav__link">Hilfe & Kontakt</a></li>
+        <li class="mobile-nav__divider"></li>
+        <li><a href="/pages/impressum" class="mobile-nav__link mobile-nav__link--small">Impressum</a></li>
+        <li><a href="/pages/datenschutz" class="mobile-nav__link mobile-nav__link--small">Datenschutz</a></li>
+        <li><a href="/pages/agb" class="mobile-nav__link mobile-nav__link--small">AGB</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    }
+  ]
+}
+{% endschema %}
